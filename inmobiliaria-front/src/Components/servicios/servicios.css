@@ -1,92 +1,61 @@
-
-.services-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    margin-top:4%;
-    margin-bottom: 4%;
-    position:relative;
-    text-align: center;
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 10rem 27rem;
+  text-align: center;
 }
 
-.ul-card-servicio {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top:5%;
-    list-style: none;
+.ulCardServicio {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  list-style: none;
+  gap: 4rem;
 }
 
- h2 {
-    font-size:24pt;
+.liCardServicio {
+  padding: 2rem;
+  border: 2px solid var(--gray);
+  border-radius: 2rem;
+  width: 30rem;
+  box-shadow: 0 1px 1px 0 rgba(53, 53, 53, 0.2), 0 6px 20px 0 rgba(53, 53, 53, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
 }
 
-.li-card-servicio {
-    margin-left:2%;
-    margin-right:2%;
-
-    border: 2px solid rgb(129, 126, 126);
-    border-radius: 8%;
-    width: 20%;
-    height: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.liCardServicio h3 {
+  padding: 10px 0px;
+  font-size: 2rem;
 }
 
-.li-card-servicio h3 {
-    padding: 10px 0px;
-    font-size: 18pt;
+.liCardServicio {
+  transition: 0.5s;
+  background: white;
 }
 
-.li-card-servicio {
-    transition: .5s;
-    background: white;
+.liCardServicio:hover h3 {
+  color: var(--red);
 }
 
-.li-card-servicio:hover  h3 {
-    color: #c2185b;
-}
-.li-card-servicio:hover  {
-    transform: scale(1.03);
-    background: #fff;
+.liCardServicio:hover {
+  transform: scale(1.03);
+  background: #fff;
 }
 
-.li-images{
-    max-width:180px;
-    max-height: 90px;
+.liImages {
+  max-width: 90px;
+  max-height: 80px;
+  margin: 0 auto;
 }
 
-.li-description {
-    padding: 2%;
-    height: 30%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
+.liDescription {
+  padding: 1rem;
 
-div.li-description > p {
-    /* line-height:normal; */
-    display: inline-block;
-    vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.services-description {
-    padding-top:2%;
-    font-size: 15pt;
-    
-}
-.card {
-    padding: 2em;
-  }
-  
-  .read-the-docs {
-    color: #888;
-  }
-  
-  .app-main-container { 
-    width:100%;
-    height: 40vw;
-   
-  }
-
-/*---*/

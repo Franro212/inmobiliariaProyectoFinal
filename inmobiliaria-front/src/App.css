@@ -1,11 +1,65 @@
+.containerSectInmuebles{
+  padding: .1rem;
+  /* background-color: var(--gray); */
+}
 
 .containerCard{
   display: flex;
   justify-content: space-evenly;
+  margin: 0 27rem;
+  gap: 4rem;
+}
+
+
+
+
+.containerTitleSection{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 10rem 27rem;
+  text-align: center;
 
 }
 
-.tituloCards{
+.secTitle {
+  font-size: 3.2rem;
+  margin: 2rem;
+}
+
+
+.secSubtitle{
+    font-weight: 600;
+    color: var(--red);
+    text-align: center;
+}
+
+.servicesDescription {
+  font-size: 1.6rem;
+}
+
+.contBtnApp{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btnVerMas{
+  font-size: 1.6rem;
+  background-color: var(--red);
+  color: var(--white);
+  height: 5rem;
+  width: 20rem;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
   text-align: center;
-  margin: 10rem;
+  transition: 0.5s;
+
+
+}
+
+.btnVerMas:hover{
+  background-color: #a4010f;
 }
