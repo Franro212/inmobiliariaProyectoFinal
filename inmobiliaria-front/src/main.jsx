@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App';
 import HomeAdmin from './Components/HomeAdmin.jsx/HomeAdmin';
 import Login from './Components/Login/Login';
+import BuscadorPage from './Components/BuscadorPage/BuscadorPage';
 
 // ============ STYLE ===============
 import './index.css'
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
 {
   path: "homeAdmin",
   element: <HomeAdmin />,
+},
+
+{
+  path: "buscador",
+  element: <BuscadorPage/>,
 },
 
 ]);

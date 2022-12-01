@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './main.css';
 
 
@@ -8,7 +9,7 @@ function Main() {
         <div className='containerMainText'>
             <h1 className='titleMain'>Encuentra <span className='red'>la mejor propiedad,</span> nosotros te acompañamos</h1>
             <p className='txtMain'>Respaldo, seguridad y confianza. Ofrecemos un servicio integral, profesional y serio, logrando el objetivo propuesto al cliente.</p>
-            <button className="btnMain">Buscar propiedades</button>
+            <Link to={`buscador/`}><button className="btnMain">Buscar propiedades</button> </Link>
         </div>
 
 
