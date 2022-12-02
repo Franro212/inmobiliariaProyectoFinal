@@ -1,0 +1,51 @@
+.pageLoginContainer{
+    margin: 0 27rem;
+}
+
+.contPageLogin{
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+
+.containerPLoginText{
+    width: 40%;
+    margin-top: 20rem;
+}
+
+.titlePageLogin{
+    font-size: 4rem;
+    padding: 2rem 0rem;
+}
+
+.contForm{
+    width: 50%;
+    margin-top: -5rem;
+}
+
+.btnPageLogin{
+    margin-top: 3rem;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

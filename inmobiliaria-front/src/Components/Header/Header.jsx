@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className='header'>
         
-            <a href="/"><img className='logo' src="public\assets\logo.jpeg" alt="logo" /></a> 
+            <a href="/"><img className='logo' src="public\assets\logoSinFondo.png" alt="logo" /></a> 
         
         <nav className='nav'>
             <ul className='navList'>
@@ -18,8 +18,8 @@ function Header() {
             </ul>
         </nav>
 
-        <Link to={"/login"}>
-          <button className='btnHeader'>Iniciar sesión</button>
+        <Link to={"/pageLogin"}>
+          <button className='btnGray'>Iniciar sesión</button>
         </Link>
     </div>
   )
