@@ -12,7 +12,7 @@ function CardInmuebleHome() {
         <div className='contContenido'>
 
         <h3 className='tituloCard'>Complejo de tres viviendas a estrenar.</h3>
-            <p className='precio'>U$S150.000</p>
+            <p className='precio'>U$S 150.000</p>
            <hr />
             <div className='especificaciones'>
                 
@@ -22,7 +22,7 @@ function CardInmuebleHome() {
                 
                 <p><FaRulerCombined className='icono'/>63 m2</p>
 
-        </div>
+              </div>
             </div>
                  
         

@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client';
 
 // ============ IMPORT ROUTE ===============
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from './App';
-import HomeAdmin from './Components/HomeAdmin.jsx/HomeAdmin';
-import Login from './Components/Login/Login';
+import App from './Routes/App/App';
+import HomeAdmin from './Pages/HomeAdmin/HomeAdmin.jsx';
+import PageLogin from './Pages/PageLogin/PageLogin';
+
+
+
 
 // ============ STYLE ===============
 import './index.css'
@@ -18,8 +21,8 @@ const router = createBrowserRouter([
 },
 
 {
-  path: "login",
-  element: <Login />,
+  path: "pageLogin",
+  element: <PageLogin />,
 },
 
 {
