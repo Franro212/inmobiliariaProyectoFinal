@@ -10,7 +10,6 @@ function Servicios() {
             <li className='liCardServicio'key={index}>
                 <h3>{obj.nombre}</h3>
                 <div className='liDescription'><p >{obj.descripcion}</p></div>
-              
                 <img className='liImages' src={obj.img}></img>
 
             </li>
@@ -21,7 +20,7 @@ function Servicios() {
     <div className="servicesContainer">
       <h3 className='secSubtitle'>Servicios</h3>
     <h2 className='secTitle'>¿Qué ofrecemos?</h2>
-    <p className='servicesDescription'>Nuestras soluciones están acorde a lo que necesitas junto con la asesoría personalizada.</p>
+    <p className='description'>Nuestras soluciones están acorde a lo que necesitas junto con la asesoría personalizada.</p>
     <ul className="ulCardServicio">
       {CardServices(ObjServicios)}
     </ul>

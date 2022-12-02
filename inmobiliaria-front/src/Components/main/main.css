@@ -1,6 +1,6 @@
 
 .mainContainer{
-    background-image: url("public/assets/bannerHouse.png");
+    background-image: url("public/assets/banner3.png");
     height: 70rem;
     position: relative;
     background-position: center;
@@ -45,11 +45,6 @@
 
 .btnMain:hover{
     background-color: #a4010f;
-}
-
-.red {
-    color: var(--red);
-    background: none;
 }
 
 

@@ -18,8 +18,8 @@ function Header() {
             </ul>
         </nav>
 
-        <Link to={"/login"}>
-          <button className='btnHeader'>Iniciar sesión</button>
+        <Link to={"/pageLogin"}>
+          <button className='btnGray'>Iniciar sesión</button>
         </Link>
     </div>
   )

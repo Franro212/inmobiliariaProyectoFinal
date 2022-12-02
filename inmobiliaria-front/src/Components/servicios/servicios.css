@@ -13,14 +13,15 @@
   margin-top: 10rem;
   list-style: none;
   gap: 4rem;
+  margin-bottom: 6rem;
 }
 
 .liCardServicio {
-  padding: 2rem;
+  padding: 3rem;
   border: 2px solid var(--gray);
   border-radius: 2rem;
   width: 30rem;
-  box-shadow: 0 1px 1px 0 rgba(53, 53, 53, 0.2), 0 6px 20px 0 rgba(53, 53, 53, 0.2);
+  /* box-shadow: 0 1px 1px 0 rgba(53, 53, 53, 0.2), 0 6px 20px 0 rgba(53, 53, 53, 0.2); */
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -52,7 +53,11 @@
   margin: 0 auto;
 }
 
-.liDescription {
+.liDescription{
+ padding: 1rem;
+}
+
+.description {
   padding: 1rem;
 
   display: flex;
