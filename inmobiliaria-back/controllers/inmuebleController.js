@@ -1,12 +1,17 @@
-const knex = require("../config/inmobiliariaRossi_DB");
+const knex = require("../config/inmobiliariaRossi_DB")
 
-exports.listaInmueble=(req,res)=>{
-    knex("inmobiliariaRossi_DB").then((resultado)=>{
+exports.listaInmueble = (req, res) => {
+    knex.select('*')
+    .from('inmuebles')
+    .join('ubicaciones', {id_ubicacion: 'inmuebles.id_inmueble'})
+    
+      .then((resultado) => {
         res.json(resultado);
-    }).catch((error)=>{
-        res.status(400).json({error:error.message});
-    });
-};
+      })
+      .catch((error) => {
+        res.status(400).json({ error: error.message });
+      });
+  };
 exports.inmuebleNuevo  = async (req, res) => {
     const {
         tipo_operacion,
@@ -28,7 +33,7 @@ exports.inmuebleNuevo  = async (req, res) => {
   try{
   
     await knex.transaction(async (trx) =>{
-        const inmueble_nuevo =  await trx ('inmobiliariaRossi_DB')
+        const inmueble_nuevo =  await trx ('inmuebles')
         .insert({
         tipo_operacion:tipo_operacion,
         tipo_inmueble:tipo_inmueble,
@@ -42,7 +47,7 @@ exports.inmuebleNuevo  = async (req, res) => {
            
         }, 'id_inmueble');
   
-    await trx ('ubicacion')
+    await trx ('ubicaciones')
         .insert({
             direccion: direccion, 
             departamento: departamento,
