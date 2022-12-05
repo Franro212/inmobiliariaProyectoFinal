@@ -1,8 +1,7 @@
-.pageLoginContainer{
-    margin: 0 27rem;
-}
+
 
 .contPageLogin{
+    margin: 16rem 27rem;
     display: flex;
     justify-content: space-between;
     gap: 10rem;
