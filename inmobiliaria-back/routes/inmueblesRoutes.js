@@ -14,7 +14,7 @@ const {
   
   router.post("/inmuebles/nuevo",verifyToken,  inmuebleNuevo);
   
-  router.put("/inmuebles/modificar",verifyToken, modificarInmueble)
+  router.put("/inmuebles/modificar/:id",verifyToken, modificarInmueble)
   
   router.delete("/inmuebles/eliminar/:id",verifyToken,  eliminarInmueble)
  
