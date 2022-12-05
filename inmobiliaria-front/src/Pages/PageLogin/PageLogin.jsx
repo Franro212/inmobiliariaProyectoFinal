@@ -2,17 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Login from '../../Components/Login/Login'
 import './pageLogin.css';
+import Footer from '../../Components/Footer/Footer'
 
 function PageAdmin() {
   return (
-    <div className='pageLoginContainer'>
-          
-      <header className="headerLogin">
-        <a href="/">
-          <img className="logo" src="public\assets\logoSinFondo.png" alt="logo" />
-        </a>
-      </header>
-
+  
+<>
 
       <div className='contPageLogin'>
         <div className='containerPLoginText'>
@@ -26,9 +21,11 @@ function PageAdmin() {
         <div className="contForm">
           <Login/>
         </div>
-    </div>
-   
-    </div>
+
+        </div>
+        
+        </> 
+  
   )
 }
 

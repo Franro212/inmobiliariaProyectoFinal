@@ -49,8 +49,7 @@ input, button, textarea{
   border-radius: 3rem;
   cursor: pointer;
   transition: 0.5s;
-   
-  }
+}
 
 
   /* Estilos de botones rojos */
@@ -60,7 +59,6 @@ input, button, textarea{
   color:white;
   height: 6rem;
   width: 20rem;
-  margin-top: 5rem;
 }
 
 
