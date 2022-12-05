@@ -1,7 +1,7 @@
 const knex = require("../config/inmobiliariaRossi_DB");
 
 exports.listaInmueble=(req,res)=>{
-    knex("inmobiliariaRossi_DB").then((resultado)=>{
+    knex("inmobiliariaossi_DB").then((resultado)=>{
         res.json(resultado);
     }).catch((error)=>{
         res.status(400).json({error:error.message});
