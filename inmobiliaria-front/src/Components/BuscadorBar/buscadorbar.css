@@ -1,16 +1,54 @@
 @import 'react-bootstrap-buttons/dist/react-bootstrap-buttons.css';
+/* @import 'bootstrap/dist/css/bootstrap.css';  */
+@import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 /* @import 'bootstrap/dist/css/bootstrap.min.css'; */
-.formContainer {
-    display: flex;
-    flex-direction:row;
-    justify-content: space-around;
+
+/*clases Temporales -- Luego se borra... capaz*/
+.contenedorTemporal {
+    display:flex;
+    flex-direction: column;
 }
 
-.formContainer {
+.formAlito {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+}
+
+.elementForm{
+    margin:2%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.rangeSliderPrice{
+    margin:2%;
+    width: 30%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+.buttonForm {
+    margin:2%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+/*clases Temporales -- Luego se borra... Capaz*/
+
+.barContainer {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.barContainer {
 
     border: 1px solid rgb(129, 126, 126);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 70rem;
+    width: 80rem;
     
 }
 
@@ -28,4 +66,28 @@
     display: flex;
     justify-content: center;
 
+}
+
+.buttonSearch {
+    background-color: #BD212E;
+    color:white;
+    border:#BD212E;
+    width:10rem;
+    height: 3rem;
+    border-radius: 10rem;
+}
+
+.form-control {
+    width: 100% !important;
+    box-shadow: 0 0 0 0 #00000000 !important;
+    border-color: #00000000 !important;
+    border-bottom: 1px solid #efefef !important;
+}
+
+.form-control:focus {
+    width: 100% !important;
+    border-color: #13121200 !important;
+    border-bottom: 1px solid var(--primary) !important;
+    outline: 0;
+    transition: all 0.3s ease-in;
 }

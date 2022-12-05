@@ -6,8 +6,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 
-const userRoutes = require("./routes/userRouter");
-
+const userRoutes = require("./routes/userRoutes");
+const inmueblesRoutes = require("./routes/inmueblesRoutes");
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(cors());
 
 
 app.use("/api", userRoutes);
-
+app.use("/api",inmueblesRoutes);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
