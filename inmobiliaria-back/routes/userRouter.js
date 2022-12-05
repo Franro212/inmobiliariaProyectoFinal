@@ -17,7 +17,7 @@ router.get("/user/list",  listUser);
 
 router.post("/user/login",  loginValidator, runValidation, login);
 
-router.post("/user/register",  userValidator, runValidation, register);
+router.post("/user/register", verifyToken, verifyPerfil, userValidator, runValidation, register);
 
 module.exports = router;
 
