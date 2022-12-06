@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { listUser, login, register, infoUser, deleteUser } = require("../controllers/userController");
+const { listUser, login, register, infoUser, deleteUser } = require("../controllers/userControllers");
 const { runValidation } = require("../validators/index");
 
 const {
