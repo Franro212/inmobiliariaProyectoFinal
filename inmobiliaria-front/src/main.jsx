@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom/client';
 
 // ============ IMPORT ROUTE ===============
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from './App';
-import HomeAdmin from './Components/HomeAdmin.jsx/HomeAdmin';
-import Login from './Components/Login/Login';
-import BuscadorPage from './Components/BuscadorPage/BuscadorPage';
+
+// ============ IMPORT COMPONENTS ===============
+import App from './Routes/App/App';
+import HomeAdmin from './Pages/HomeAdmin/HomeAdmin.jsx';
+import PageLogin from './Pages/PageLogin/PageLogin';
+import GestionUsuarios from './Pages/GestionUsuarios/GestionUsuarios';
+import GestionPublicaciones from './Pages/GestionPublicaciones/GestionPublicaciones';
+
+
 
 // ============ STYLE ===============
 import './index.css'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const router = createBrowserRouter([
 
@@ -19,8 +25,8 @@ const router = createBrowserRouter([
 },
 
 {
-  path: "login",
-  element: <Login />,
+  path: "pageLogin",
+  element: <PageLogin />,
 },
 
 {
@@ -29,14 +35,21 @@ const router = createBrowserRouter([
 },
 
 {
-  path: "buscador",
-  element: <BuscadorPage/>,
+  path: "gestionUsuarios",
+  element: <GestionUsuarios />,
+},
+
+{
+  path: "gestionPublicaciones",
+  element: <GestionPublicaciones />,
 },
 
 ]);
 
   ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
+      <ChakraProvider>
       <RouterProvider router={router} />
+      </ChakraProvider>
     </React.StrictMode>
 );

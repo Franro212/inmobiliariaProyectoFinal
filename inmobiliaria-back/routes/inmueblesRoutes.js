@@ -1,26 +1,32 @@
 const express = require('express');
 const router = express.Router();
-
 const {
     listaInmueble,
     inmuebleNuevo,
     modificarInmueble,
     eliminarInmueble,
     filtrarInmueble,
+    photo,
+    buscarById,
     
   } = require("../controllers/inmuebleControllers");
   const { verifyToken } = require("../validators/auth");
   const {verifyPerfil,verifyPerfil2} = require("../validators/perfil");
  
-  // router.get("/inmueble/listaInmueble",verifyToken, verifyPerfil, verifyPerfil2, listaInmueble);
-  router.get("/inmueble/listainmueble", listaInmueble);
   router.post("/inmueble/listainmueble/filtrar", filtrarInmueble);
 
-  // router.post("/inmueble/nuevo",verifyToken, verifyPerfil, verifyPerfil2, inmuebleNuevo);
+ 
+   router.get("/inmuebles/listaInmueble", listaInmueble);
+
+   router.get("/inmuebles/photo/:id", photo);
+
+   router.get("/inmuebles/buscar/:id", buscarById)
   
-  // router.put("/inmueble/modificar",verifyToken,verifyPerfil, verifyPerfil2, modificarInmueble)
+  router.post("/inmuebles/nuevo",  inmuebleNuevo);
   
-  // router.delete("/inmueble/eliminar/:id",verifyPerfil , verifyPerfil2, eliminarInmueble)
+  router.put("/inmuebles/modificar/:id", modificarInmueble)
+  
+  router.delete("/inmuebles/eliminar/:id", eliminarInmueble)
  
 
   
