@@ -5,18 +5,24 @@ const {
     inmuebleNuevo,
     modificarInmueble,
     eliminarInmueble,
+    photo,
+    buscarById,
     
   } = require("../controllers/inmuebleController");
-  const { verifyToken} = require("../validators/auth");
+ 
   
  
-   router.get("/inmuebles/listaInmueble",verifyToken, listaInmueble);
+   router.get("/inmuebles/listaInmueble", listaInmueble);
+
+   router.get("/inmuebles/photo/:id", photo);
+
+   router.get("/inmuebles/buscar/:id", buscarById)
   
-  router.post("/inmuebles/nuevo",verifyToken,  inmuebleNuevo);
+  router.post("/inmuebles/nuevo",  inmuebleNuevo);
   
-  router.put("/inmuebles/modificar/:id",verifyToken, modificarInmueble)
+  router.put("/inmuebles/modificar/:id", modificarInmueble)
   
-  router.delete("/inmuebles/eliminar/:id",verifyToken,  eliminarInmueble)
+  router.delete("/inmuebles/eliminar/:id", eliminarInmueble)
  
 
   
