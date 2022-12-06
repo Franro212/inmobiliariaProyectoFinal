@@ -46,5 +46,15 @@
 .btnMain:hover{
     background-color: #a4010f;
 }
+.contIconos{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: fixed;
+    left: 95%;
+}
+.iconoStatic{
+    width: 4rem;
+}
 
 
