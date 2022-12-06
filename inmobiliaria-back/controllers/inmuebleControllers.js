@@ -27,7 +27,6 @@ exports.filtrarInmueble = (req, res) => {
     .select("*")
     .from("inmuebles")
     .join("ubicaciones", { id_ubicacion: "inmuebles.id_inmueble" })
-    // .where({departamento: Departamento})
     .then((respuesta) => {
       let filteredInmuebleOr = respuesta.filter((innerArray) => {
         if (

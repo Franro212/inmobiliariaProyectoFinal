@@ -14,9 +14,9 @@ function BuscadorPage() {
     const[inmuebles, setInmuebles] = useState([]);
     const[datosIniciales,setDatosIniciales] = useState([]);
     const [ObjetoSelect, setObjetoSelect] = useState({
-      Departamento: '',
-      Tipo:'',
-      Precio:0,
+      departamento:'',
+      tipo_inmueble:'',
+      precio:0,
   });
    
 
@@ -33,16 +33,18 @@ function BuscadorPage() {
 
     console.log("inmuebles: ", inmuebles);
 
-  //   const onClickFiltrar = async (datos) =>{
-  //      await filtrarInmuebles(datos)
-  //     .then((response)=> {
-  //         setInmuebles(response);
-  //     })
-  //     .catch((error)=>{
-  //         alert(error);
-  //     });
+    const onClickFiltrar = async (datos) =>{
+       await filtrarInmuebles(datos)
+      //  console.log("datos: ",datos)
+      .then((response)=> {
+          setInmuebles(response)
+          // console.log("response desde onclickFiltrar", response);
+      })
+      .catch((error)=>{
+          alert(error);
+      });
       
-  // };
+  };
   const inmuebleBuscar = () => { 
     const inmueblesFiltered = datosIniciales.filter((innerArray)=>{
         if(innerArray.departamento.includes(ObjetoSelect.Departamento.value)){
@@ -73,7 +75,14 @@ function BuscadorPage() {
       <Header/>
     </div>
     <div className='buscadorbarContainer'>
-      <BuscadorBar  setInmuebles={setInmuebles} ObjetoSelect={ObjetoSelect} setObjetoSelect={setObjetoSelect} Inmuebles={inmuebles} InmuebleBuscar={inmuebleBuscar}/>  
+      <BuscadorBar  
+        setInmuebles={setInmuebles}
+        ObjetoSelect={ObjetoSelect}
+        setObjetoSelect={setObjetoSelect} 
+        Inmuebles={inmuebles} 
+        InmuebleBuscar={inmuebleBuscar}
+        onClickFiltrar={onClickFiltrar}
+        />  
     </div>
     <div>
       <DisplayCardsInmuebles  Inmuebles={inmuebles}

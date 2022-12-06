@@ -12,9 +12,9 @@ export const listaInmuebles = async() =>{
     });
 };
 
-export const filtrarInmuebles = async(datos) =>{
+export const filtrarInmuebles = async(body) =>{
     let url="api/inmueble/listainmueble/filtrar";
-    return await API.get(url,{data:datos})
+    return await API.post(url,body)
     .then((response)=>{
         return response.data;
     })

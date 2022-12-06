@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react';
 import Button from 'react-bootstrap/Button';
 import {Form} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
-import Select,  { components } from 'react-select';
+import Select from 'react-select';
 import './buscadorbar.css';
 
 const optionsDepartamentos = [
@@ -18,7 +18,6 @@ const optionsTipoInmuebles = [
     { value: 'Casa', label: 'Casa' },
     { value: 'Terreno', label: 'Terreno' }
   ] 
-  const number = 123.789;
  
 
 
@@ -30,23 +29,16 @@ function BuscadorBar(props) {
     //     Tipo:'',
     //     Precio:0,
     // });
-    const inmuebleBuscar = () => { 
-        
-         console.log("Lo que hay dentro de inmueble buscar: ", props.ObjetoSelect.Departamento.value );
-    
-    }
+ 
     
     const [valorFinal, setValorFinal ] = useState(0);
- 
+    const[price,setPrice] = useState('')
+
      console.log('ObjetoSelect: ', props.ObjetoSelect);
     //  console.log('ObjetoSelect: ', props.ObjetoSelect.Departamento.value);
     //  console.log('valorFinal: ', valorFinal);
 
-     const handleSearchChange=()=>{
-        // if(!e.target.value) return setObjetoSelect(props.Inmuebles);
-        const resultArray = Inmuebles.filter(obj=>obj.Departamento.includes(props.ObjetoSelect.Departamento.value))
-        //|| post.body.includes(e.target.value))     
-     }
+   
     const handleSubmit = (e) => {e.preventDefault()}
     const selectInputRef = useRef();
     const onClear = () => {
@@ -67,10 +59,10 @@ Option: useState para cada valores inputs. */}
        <div className='elementForm'>
       <Select
         className="basic-single"
-        value={props.ObjetoSelect.Departamento}
+        value={props.ObjetoSelect.departamento}
         name="departamentos"
         onChange={(e)=>{console.log(e);
-            props.setObjetoSelect({...props.ObjetoSelect,Departamento:e})}}
+            props.setObjetoSelect({...props.ObjetoSelect,departamento:e})}}
         options={optionsDepartamentos}  
         defaultValue={"Departamento"}   
         placeholder={'Departamento'}    
@@ -83,33 +75,48 @@ Option: useState para cada valores inputs. */}
         inputId={"my_field"}
   
         // className="basic-single"
-        value={props.ObjetoSelect.Tipo}
+        value={props.ObjetoSelect.tipo_inmueble}
         name="Tipo de Inmuebles"
         onChange={(e)=>{console.log(e.value);
-            props.setObjetoSelect({...props.ObjetoSelect,Tipo:e})}}
+            props.setObjetoSelect({...props.ObjetoSelect,tipo_inmueble:e})}}
         options={optionsTipoInmuebles}   
         placeholder={'Tipo inmueble'}    
-        isClearable={true}
+        // isClearable={true}
         />
 
 
       </div>
-       <div className='rangeSliderPrice'>   
+       <div className='rangeSliderPrice'>  
+       {/* <input
+        // type="text"
+        value={price}
+        onChange={(e)=>{console.log(e);
+          props.setObjetoSelect({...props.ObjetoSelect,precio:e.target.value});setPrice(e.target.value)}}></input> */}
+        
+
+
         <RangeSlider
-            value={props.ObjetoSelect.Precio}
+            value={props.ObjetoSelect.precio}
             tooltipPlacement='top'
             onChange={(e)=>{console.log(e);
-            props.setObjetoSelect({...props.ObjetoSelect,Precio:e.target.value})}}
+            props.setObjetoSelect({...props.ObjetoSelect,precio:e.target.value});setPrice(e.target.value)}}
             min={0}
             size='lg'
             step={5000}
             max={200000}
-            onAfterChange={(e) => {console.log('resultado del onAfterChange: ',e);setValorFinal(props.ObjetoSelect.Precio)}}
+            onAfterChange={(e) => {console.log('resultado del onAfterChange: ',e);setValorFinal(props.ObjetoSelect.precio)}}
         />
-            <p>Precio: USD {valorFinal}</p>
+            <p>Máx. precio: U$S{valorFinal.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</p>
         </div>  
        <div className='buttonForm'>
-            <button className='buttonSearch' onClick={props.InmuebleBuscar}  >Buscar</button>
+          <button className='buttonSearch' 
+              onClick={()=>{console.log('resultado del onClick en Button: '+ props.ObjetoSelect.departamento.value + props.ObjetoSelect.tipo_inmueble.value);
+              props.onClickFiltrar({"departamento":props.ObjetoSelect.departamento,
+              "tipo_inmueble": props.ObjetoSelect.tipo_inmueble,
+              "precio": props.ObjetoSelect.precio
+            })
+            }}>Buscar
+          </button>
         </div> 
         {/* type="submit" */}
 

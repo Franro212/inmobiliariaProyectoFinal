@@ -22,7 +22,7 @@ function DisplayCardsInmuebles({ Inmuebles }) {
                 </div>
                 <div className="contContenido">
                   <p>Departamento: {inmueble.departamento}</p>
-                  <p className="precio"> U$S{inmueble.precio}</p>
+                  <p className="precio"> U$S{inmueble.precio.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</p>
                   <hr />
                   <div className="especificaciones">
                     <p>
