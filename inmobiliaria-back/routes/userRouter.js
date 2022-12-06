@@ -9,7 +9,7 @@ const {
 } = require("../validators/userValidator.js");
 
 const { verifyToken } = require("../validators/auth");
-const { verifyPerfil } = require("../validators/perfil");
+
 
 
 router.get("/user/infoUser", verifyToken, infoUser)

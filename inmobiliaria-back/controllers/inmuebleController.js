@@ -182,6 +182,29 @@ exports.eliminarInmueble = (req, res) => {
     });
 };
 
+exports.photo = (req, res) => {
+    const id = req.params.id;
+    knex("inmuebles")
+      .where("id_inmueble", id)
+      .then((result) => {
+        res.set("Content-Type", result[0].file_type);
+        return res.send(result[0].file_data);
+      })
+      .catch((error) => {
+        res.status(400).json({ error: error.message });
+      });
+  };
  
-
+  exports.buscarById = (req, res) => {
+    const id = req.params.id;
+    knex("inmuebles")
+      .where("inmuebles.id_inmueble", id)
+      .then((resultado) => {
+        if (resultado.length) {
+          res.json(resultado);
+        } else {
+          res.status(404).json({ error: "No existe el Id en la base de datos" });
+        }
+      });
+  };
   

@@ -1,11 +1,16 @@
 import React from "react";
 import './formContact.css'
-
+import { useForm, ValidationError } from '@formspree/react';
 function FormContact() {
+  const [state, handleSubmit] = useForm("xzbwnekl");
+  if (state.submitting) {
+    return alert("Gracias por contactarnos!")
+}
+
   return (
     <div>
       <div className="containerLogin">
-        <form className="formContact">
+        <form onSubmit={handleSubmit} className="formContact">
 
           <label>
             <input
@@ -13,7 +18,13 @@ function FormContact() {
               placeholder="Nombre"
               required
               type="text"
+              id="nombre"
             />
+            <ValidationError 
+        prefix="nombre" 
+        field="nombre"
+        errors={state.errors}
+      />
           </label>
 
           <br />
@@ -22,10 +33,16 @@ function FormContact() {
             <input
               className="inputForm"
               placeholder="Email"
-              required
-              type="email"
+              id="email"
+              type="email" 
+              name="email"
            
             />
+              <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
           </label>
 
           <br />
@@ -34,17 +51,21 @@ function FormContact() {
             <textarea
               className="inputForm"
               maxlength='1000'
-            minlength='100'
+            minlength='10'
               placeholder="Deja tu consulta aquí"
-              required
-              type="TextArea"
-           
+              id="message"
+        name="message"         
             />
+             <ValidationError 
+        prefix="Message" 
+        field="message"
+        errors={state.errors}
+      />
           </label>
 
           <br />
           <br />
-          <input className="btnLogin" type="submit" value="Enviar"/>
+          <input  className="btnLogin" type="submit" disabled={state.submitting} value="Enviar"/>
         </form>
       </div>
     </div>

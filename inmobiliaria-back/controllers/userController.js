@@ -1,7 +1,7 @@
 const knex = require("../config/inmobiliariaRossi_DB");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { Knex } = require("knex");
+
 
 exports.infoUser = (req, res) => {
   res.json(req.user.nombre);
@@ -77,7 +77,7 @@ exports.login = (req, res) => {
         {
           nombre: resultado[0].nombre,
           email: resultado[0].email,
-          id: resultado[0].ids,
+          id: resultado[0].id,
           tipo_usuario: resultado[0].tipo_usuario,
         },
         process.env.TOKEN_SECRET
