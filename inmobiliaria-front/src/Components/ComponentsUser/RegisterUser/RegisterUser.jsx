@@ -1,61 +1,65 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
+
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box
+} from "@chakra-ui/react";
 import { registrarUsuario } from "../../../Api/Rule_user";
 
+
 function RegisterUser() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [tipoUser, setTipoUser] = useState("");
   
-
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleTipoUser = (e) => {
-    setTipoUser(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const credenciales = {
-      email: email,
-      password: password,
-      nombre: name,
-      tipo_usuario: tipoUser,
-    };
-
-    await registrarUsuario(credenciales)
-      .then(() => {
-        alert("Usuario registrado");
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
+      
+      const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+    
+      const onSubmit = async (data) => {
+        await registrarUsuario(data)
+          .then(() => {
+            alert("El usuario se regsitro correctamente")
+          })
+          .catch((error) => {
+            alert(error);
+          });
+        }
   return (
     <>
-      <form  onSubmit={handleSubmit}>
-        <label>
-          <input
-           
-            placeholder="Nombre"
-            type="text"
-            value={name}
-            onChange={handleName}
-          />
-        </label>
+    <Accordion allowToggle>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Nuevo usuario
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            
+              <div className="container-form ctn-form">
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+              <h2 className="title-form">Añadir nuevo usuario</h2>
 
-        <br />
+              <label>
+                <input
+                  className="input-form"
+                  placeholder="Nombre"
+                  type="text"
+                  {...register("nombre", {
+                    required: true,
+                  })}
+                />
+                <br />
+      {errors.nombre?.type === "required" && <span>El nombre es requerido</span>}
+              </label>
 
         <label>
           <input
@@ -68,7 +72,23 @@ function RegisterUser() {
           />
         </label>
 
+<<<<<<< HEAD
         <br />
+=======
+              <label>
+                <input
+                  className="input-form"
+                  placeholder="Email"
+                  required
+                  type="email"
+                  {...register("email", {
+                    required: true,
+                  })}
+                />
+                <br />
+      {errors.email?.type === "required" && <span>El email es requerido</span>}
+              </label>
+>>>>>>> d80a5479463cfe536cfa1ac092f126afd31cb489
 
         <label>
           <input
@@ -82,6 +102,7 @@ function RegisterUser() {
           />
         </label>
 
+<<<<<<< HEAD
         <label>
           <input
     
@@ -96,6 +117,47 @@ function RegisterUser() {
 
         <br />
         <br />
+=======
+              <label>
+                <input
+                  className="input-form"
+                  placeholder="Password"
+                  required
+                  autoComplete="none"
+                  type="password"
+                 
+                  {...register("password", { required: true, minLength: 8 })}
+                />
+                <br />
+      {errors.password?.type === "required" && <span>El password es requerido</span>}
+      {errors.password?.type === "minLength" && <span>Como minimo 8 caracterers</span>}
+              </label>
+
+              <label>
+                <select
+                className="input-form"
+                >
+              <option>Seleccione tipo de usuario</option>
+          <option
+            {...register("tipo_usuario", {
+              required: true,
+            })}
+            value="1"
+          >
+            Administrador
+          </option>
+          <option
+            value="2"
+            {...register("tipo_usuario", {
+              required: true,
+            })}
+          >
+            Usuario
+          </option>
+         
+        </select>
+              </label>
+>>>>>>> d80a5479463cfe536cfa1ac092f126afd31cb489
 
      
           <button className="btn" type="submit">

@@ -2,7 +2,7 @@ exports.verifyPerfil = (req, res, next) => {
 
     const user = req.user;
     console.log(user)
-    if (user.tipo_usuario == "administrador") {
+    if (user.tipo_usuario == "admin") {
         next();
     }
     else {
