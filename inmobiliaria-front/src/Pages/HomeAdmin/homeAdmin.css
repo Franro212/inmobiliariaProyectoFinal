@@ -1,56 +1,19 @@
-.homeAdminContainer{
-    margin: 3rem 27rem;
-}
-.headerAdmin{
-    background-color: var(--gray);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 2rem;
-    border-radius: 2rem;
 
-}
-
-.logoAdm{
-    width: 10rem;
-}
-
-
-.contUser{
-    background-color: var(--white);
-    width: 14rem;
-    height: 5rem;
-    border-radius: 2rem;
-}
 
 .titleAdmin{
-    margin-top: 3rem;
-    margin-bottom: 4rem;
-}
-
-.welcomeTitle{
-    font-weight: 500;
-    font-size: 2rem;
-    padding: 1rem 0rem;
-}
-
-.subtitleAdm{
-    padding: 1rem 0rem;
-    font-size: 1.8rem;
-    font-weight: 500;
-    border-radius: 1rem;
-}
-
-
-
-.chakra-accordion__button{
-    margin:  1rem 0rem; 
-    padding: 1rem;
-}
-
-
-
-.containerAdmUser{
-    display: flex;
+    background-image: url('assets/bannerHouse.png');
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 22rem;
+    width: 100%;
+    padding: 4rem;
+    border-radius: 2rem;
     
+}
+
+
+.iconHome{
+    width: 100rem;
 }

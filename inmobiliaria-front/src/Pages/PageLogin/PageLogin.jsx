@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Login from '../../Components/Login/Login'
 import './pageLogin.css';
-import Footer from '../../Components/Footer/Footer'
+
 
 function PageAdmin() {
   return (

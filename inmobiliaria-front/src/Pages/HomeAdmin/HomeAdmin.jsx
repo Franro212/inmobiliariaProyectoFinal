@@ -1,54 +1,94 @@
 import React from "react";
-import ListUsers from "../../Components/ComponentsUser/ListUsers/ListUsers"
-import NameUser from "../../Components/ComponentsUser/NameUser/nameUser";
-import RegisterUser from "../../Components/ComponentsUser/RegisterUser/RegisterUser";
+import { Link } from "react-router-dom";
+
+import NameUser from "../../Components/ComponentsUser/NameUser/NameUser";
+import HeaderAdmin from "../../Components/Header/HeaderAdmin/HeaderAdmin";
+
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Heading,
+  Text,
+  Button,
+  Flex,
+  Box,
+  CardHeader,
+  Image,
+} from "@chakra-ui/react";
 
 import "./homeAdmin.css";
 
 function HomeAdmin() {
   return (
-    
-      <div className="homeAdminContainer">
-        <header className="headerAdmin">
-          <a href="/">
-            <img className="logoAdm" src="assets/logoSinFondoSencillo.png" alt="logo" />
-          </a>
-          <div className="contUser">
-            <NameUser />
-          </div>
-        </header>
-      
+    <>
+      <HeaderAdmin />
+      <Flex flexDirection="column" justifyContent="center" mx="27rem" my="20">
+        <Box className="titleAdmin">
+          <Text fontSize="2rem">
+            Bienvenido, {""}
+            <span className="spanRed">
+              <NameUser />
+            </span>
+          </Text>
+          <Text fontSize="3rem" as="b">
+            Tablero administrativo
+          </Text>
+          <Text fontSize="1.6rem" w="50%">
+            Aquí podrás crear, modificar y eliminar tus publicaciones. También
+            podrás crear nuevos usuarios.
+          </Text>
+        </Box>
 
-      <section className="titleAdmin">
-        <h3 className="welcomeTitle">
-          Bienvenido, {""}
-          <span className="spanRed">
-            <NameUser />
-          </span>
-        </h3>
-        <h1>Tablero administrativo</h1>
-      </section>
-      <section className="admInmuebles">
-        <h2 className="subtitleAdm">Inmuebles</h2>
-        <div className="containerAdmUser">
+        <Flex mt="10" gap="20">
+          <Card textAlign="center" w="xl" bg='var(--gray)' borderRadius='2rem'>
+            <CardBody>
+              <Image src="assets/casa.png" alt="Icono de casa" w="10rem" />
 
-        <ListUsers/>
-        <RegisterUser/>
-        </div>
-      </section>
+              <Text fontSize="2rem" my="10">
+                Gestión de publicaciones
+              </Text>
+            </CardBody>
+            <CardFooter>
+              <Button
+                fontSize="1.6rem"
+                p="8"
+                borderRadius="2rem"
+                bg="var(--red)"
+                color='var(--white)'
+              >
+                <Link to={"/gestionPublicaciones"}>
+                  Ir a gestionar Publicaciones
+                </Link>
+              </Button>
+            </CardFooter>
+          </Card>
 
+          <Card textAlign="center" w="xl" bg='var(--gray)' borderRadius='2rem'>
+            <CardBody>
+              <Image src="assets/perfil(1).png" alt="Icono de casa" w="10rem" />
 
-        <hr />
-      <section className="admUser">
-        <h2 className="subtitleAdm">Usuarios</h2>
-        <div className="containerAdmUser">
-
-        <ListUsers/>
-        <RegisterUser/>
-        </div>
-      </section>
-
-    </div>
+              <Text fontSize="2rem" my="10">
+                Gestión de usuarios
+              </Text>
+            </CardBody>
+            <CardFooter>
+              <Button
+                fontSize="1.6rem"
+                p="8"
+                borderRadius="2rem"
+                bg="var(--red)"
+                color='var(--white)'
+              >
+                <Link to={"/gestionPublicaciones"}>
+                  Ir a gestionar usuarios
+                </Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        </Flex>
+      </Flex>
+    </>
   );
 }
 

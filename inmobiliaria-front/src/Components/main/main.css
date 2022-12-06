@@ -32,7 +32,7 @@
 .btnMain {
     background-color: var(--red);
     text-align: center;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     color:white;
     height: 6rem;
     width: 25rem;
