@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import {registrarUsuario} from '../../../Api/Rule_user';
+import React from "react";
+import { useForm } from "react-hook-form";
+
 import {
   Accordion,
   AccordionItem,
@@ -8,49 +9,27 @@ import {
   AccordionIcon,
   Box
 } from "@chakra-ui/react";
+import { registrarUsuario } from "../../../Api/Rule_user";
 
 
 function RegisterUser() {
-
-
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [tipoUser, setTipoUser] = useState("");
   
-    const handleName = (e) => {
-      setName(e.target.value);
-    };
-  
-    const handleEmail = (e) => {
-      setEmail(e.target.value);
-    };
-  
-    const handlePassword = (e) => {
-      setPassword(e.target.value);
-    };
-  
-    const handleTipoUser = (e) => {
-      setTipoUser(e.target.value);
-    };
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const credenciales = {
-        email: email,
-        password: password,
-        nombre: name,
-        tipo_usuario: tipoUser,
-      };
-  
-      await registrarUsuario(credenciales)
-        .then(() => {
-          alert("Usuario registrado");
-        })
-        .catch((error) => {
-          alert(error);
-        });
-    };
+      
+      const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+    
+      const onSubmit = async (data) => {
+        await registrarUsuario(data)
+          .then(() => {
+            alert("El usuario se regsitro correctamente")
+          })
+          .catch((error) => {
+            alert(error);
+          });
+        }
   return (
     <>
     <Accordion allowToggle>
@@ -66,7 +45,7 @@ function RegisterUser() {
           <AccordionPanel pb={4}>
             
               <div className="container-form ctn-form">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <h2 className="title-form">Añadir nuevo usuario</h2>
 
               <label>
@@ -74,9 +53,12 @@ function RegisterUser() {
                   className="input-form"
                   placeholder="Nombre"
                   type="text"
-                  value={name}
-                  onChange={handleName}
+                  {...register("nombre", {
+                    required: true,
+                  })}
                 />
+                <br />
+      {errors.nombre?.type === "required" && <span>El nombre es requerido</span>}
               </label>
 
               <br />
@@ -87,9 +69,12 @@ function RegisterUser() {
                   placeholder="Email"
                   required
                   type="email"
-                  value={email}
-                  onChange={handleEmail}
+                  {...register("email", {
+                    required: true,
+                  })}
                 />
+                <br />
+      {errors.email?.type === "required" && <span>El email es requerido</span>}
               </label>
 
               <br />
@@ -101,21 +86,37 @@ function RegisterUser() {
                   required
                   autoComplete="none"
                   type="password"
-                  value={password}
-                  onChange={handlePassword}
+                 
+                  {...register("password", { required: true, minLength: 8 })}
                 />
+                <br />
+      {errors.password?.type === "required" && <span>El password es requerido</span>}
+      {errors.password?.type === "minLength" && <span>Como minimo 8 caracterers</span>}
               </label>
 
               <label>
-                <input
-                  className="input-form"
-                  placeholder="Tipo de usuario"
-                  required
-                  autoComplete="none"
-                  type="text"
-                  value={tipoUser}
-                  onChange={handleTipoUser}
-                />
+                <select
+                className="input-form"
+                >
+              <option>Seleccione tipo de usuario</option>
+          <option
+            {...register("tipo_usuario", {
+              required: true,
+            })}
+            value="1"
+          >
+            Administrador
+          </option>
+          <option
+            value="2"
+            {...register("tipo_usuario", {
+              required: true,
+            })}
+          >
+            Usuario
+          </option>
+         
+        </select>
               </label>
 
               <br />
