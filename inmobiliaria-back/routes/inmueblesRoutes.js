@@ -14,7 +14,7 @@ const {
  
   // router.get("/inmueble/listaInmueble",verifyToken, verifyPerfil, verifyPerfil2, listaInmueble);
   router.get("/inmueble/listainmueble", listaInmueble);
-  router.get("/inmueble/listainmueble/filtrar", filtrarInmueble);
+  router.post("/inmueble/listainmueble/filtrar", filtrarInmueble);
 
   // router.post("/inmueble/nuevo",verifyToken, verifyPerfil, verifyPerfil2, inmuebleNuevo);
   
