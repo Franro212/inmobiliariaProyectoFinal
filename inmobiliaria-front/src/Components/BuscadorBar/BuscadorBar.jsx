@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
-import Button from 'react-bootstrap/Button';
-import {Form} from 'react-bootstrap';
+// import Button from 'react-bootstrap/Button';
+// import {Form} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 import Select from 'react-select';
 import './buscadorbar.css';

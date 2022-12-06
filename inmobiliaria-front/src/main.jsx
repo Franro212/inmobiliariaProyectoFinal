@@ -10,6 +10,7 @@ import HomeAdmin from './Pages/HomeAdmin/HomeAdmin.jsx';
 import PageLogin from './Pages/PageLogin/PageLogin';
 import GestionUsuarios from './Pages/GestionUsuarios/GestionUsuarios';
 import GestionPublicaciones from './Pages/GestionPublicaciones/GestionPublicaciones';
+import BuscadorPage from './Components/BuscadorPage/BuscadorPage';
 
 
 
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
 {
   path: "gestionPublicaciones",
   element: <GestionPublicaciones />,
+},
+
+{
+  path: "buscadorPage",
+  element: <BuscadorPage />,
 },
 
 ]);

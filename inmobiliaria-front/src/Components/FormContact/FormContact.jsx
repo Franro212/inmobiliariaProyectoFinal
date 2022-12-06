@@ -1,17 +1,16 @@
 import React from "react";
-import './formContact.css'
-import { useForm, ValidationError } from '@formspree/react';
+import "./formContact.css";
+import { useForm, ValidationError } from "@formspree/react";
 function FormContact() {
   const [state, handleSubmit] = useForm("xzbwnekl");
   if (state.submitting) {
-    return alert("Gracias por contactarnos!")
-}
+    return alert("Gracias por contactarnos!");
+  }
 
   return (
     <div>
       <div className="containerLogin">
         <form onSubmit={handleSubmit} className="formContact">
-
           <label>
             <input
               className="inputForm"
@@ -20,11 +19,11 @@ function FormContact() {
               type="text"
               id="nombre"
             />
-            <ValidationError 
-        prefix="nombre" 
-        field="nombre"
-        errors={state.errors}
-      />
+            <ValidationError
+              prefix="nombre"
+              field="nombre"
+              errors={state.errors}
+            />
           </label>
 
           <br />
@@ -34,15 +33,14 @@ function FormContact() {
               className="inputForm"
               placeholder="Email"
               id="email"
-              type="email" 
+              type="email"
               name="email"
-           
             />
-              <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </label>
 
           <br />
@@ -50,22 +48,27 @@ function FormContact() {
           <label>
             <textarea
               className="inputForm"
-              maxlength='1000'
-            minlength='10'
+              maxlength="1000"
+              minLength="10"
               placeholder="Deja tu consulta aquí"
               id="message"
-        name="message"         
+              name="message"
             />
-             <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </label>
 
           <br />
           <br />
-          <input  className="btnLogin" type="submit" disabled={state.submitting} value="Enviar"/>
+          <input
+            className="btnLogin"
+            type="submit"
+            disabled={state.submitting}
+            value="Enviar"
+          />
         </form>
       </div>
     </div>

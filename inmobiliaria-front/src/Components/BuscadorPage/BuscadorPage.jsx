@@ -7,7 +7,7 @@ import DisplayCardsInmuebles from '../DisplayCardsInmuebles/DisplayCardsInmueble
 import {listaInmuebles, filtrarInmuebles} from '../../Api/Rule_auth_inmobiliaria';
 // import {useNavigate} from "react-router-dom";
 
-import '../../App.css';
+
 import './buscadorpage.css';
 
 function BuscadorPage() {
