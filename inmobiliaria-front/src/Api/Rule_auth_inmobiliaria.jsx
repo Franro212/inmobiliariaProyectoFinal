@@ -26,7 +26,6 @@ export const buscarId = async ()=>{
 
 }
 
-
 export const agregarInmueble = async (formData, config)=>{
     const url = "/api/inmuebles/nuevi";
     return await API.post(url, formData, config)
