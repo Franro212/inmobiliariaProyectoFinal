@@ -6,8 +6,8 @@ const cors = require("cors");
 require("dotenv").config();
 
 
-const userRoutes = require("./routes/userRouter");
- const inmuebleRoutes = require("./routes/inmueblesRoutes")
+const userRoutes = require("./routes/userRoutes");
+const inmuebleRoutes = require("./routes/inmueblesRoutes");
 
 
 
@@ -21,7 +21,7 @@ app.use(cors());
 
 
 app.use("/api", userRoutes);
- app.use("/api", inmuebleRoutes)
+app.use("/api", inmuebleRoutes);
 
 
 const port = process.env.PORT || 8000;

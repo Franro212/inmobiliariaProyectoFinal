@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react';
-import Button from 'react-bootstrap/Button';
-import {Form} from 'react-bootstrap';
+// import Button from 'react-bootstrap/Button';
+// import {Form} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 import Select from 'react-select';
 import './buscadorbar.css';
@@ -35,8 +35,7 @@ function BuscadorBar(props) {
     const[price,setPrice] = useState('')
 
      console.log('ObjetoSelect: ', props.ObjetoSelect);
-    //  console.log('ObjetoSelect: ', props.ObjetoSelect.Departamento.value);
-    //  console.log('valorFinal: ', valorFinal);
+
 
    
     const handleSubmit = (e) => {e.preventDefault()}
@@ -98,8 +97,10 @@ Option: useState para cada valores inputs. */}
         <RangeSlider
             value={props.ObjetoSelect.precio}
             tooltipPlacement='top'
-            onChange={(e)=>{console.log(e);
-            props.setObjetoSelect({...props.ObjetoSelect,precio:e.target.value});setPrice(e.target.value)}}
+            onChange={(e)=>{
+            console.log(e);
+            props.setObjetoSelect({...props.ObjetoSelect,precio:e.target.value});setPrice(e.target.value)
+            }}
             min={0}
             size='lg'
             step={5000}
@@ -109,7 +110,8 @@ Option: useState para cada valores inputs. */}
             <p>Máx. precio: U$S{valorFinal.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")}</p>
         </div>  
        <div className='buttonForm'>
-          <button className='buttonSearch' 
+          <button className='buttonSearch'
+              type="submit" 
               onClick={()=>{console.log('resultado del onClick en Button: '+ props.ObjetoSelect.departamento.value + props.ObjetoSelect.tipo_inmueble.value);
               props.onClickFiltrar({"departamento":props.ObjetoSelect.departamento,
               "tipo_inmueble": props.ObjetoSelect.tipo_inmueble,
@@ -121,7 +123,7 @@ Option: useState para cada valores inputs. */}
         {/* type="submit" */}
 
 
-      <div
+      {/* <div
         style={{
           color: 'hsl(0, 0%, 40%)',
           display: 'inline-block',
@@ -130,7 +132,7 @@ Option: useState para cada valores inputs. */}
           marginTop: '1em',
         }}
       >   
-      </div>      
+      </div>       */}
       </form>
     </div>              
         

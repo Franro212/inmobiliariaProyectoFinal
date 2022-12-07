@@ -2,23 +2,27 @@ const express = require('express');
 const router = express.Router();
 const {
     listaInmueble,
+    listaInmuebleBuscar,
     inmuebleNuevo,
     modificarInmueble,
     eliminarInmueble,
     filtrarInmueble,
-    photo,
+    // photo,
     buscarById,
     
-  } = require("../controllers/inmuebleControllers");
+  } = require("../controllers/inmuebleController");
+
   const { verifyToken } = require("../validators/auth");
   const {verifyPerfil,verifyPerfil2} = require("../validators/perfil");
- 
-  router.post("/inmueble/listainmueble/filtrar", filtrarInmueble);
+  
+  router.get("/inmuebles/listainmueblebuscar", listaInmuebleBuscar);
+
+  router.post("/inmuebles/listainmueblebuscar/filtrar", filtrarInmueble);
 
  
    router.get("/inmuebles/listaInmueble", listaInmueble);
 
-   router.get("/inmuebles/photo/:id", photo);
+  //  router.get("/inmuebles/photo/:id", photo);
 
    router.get("/inmuebles/buscar/:id", buscarById)
   

@@ -4,10 +4,10 @@ import Header from '../Header/Header';
 import BuscadorBar from '../BuscadorBar/BuscadorBar';
 import DisplayCardsInmuebles from '../DisplayCardsInmuebles/DisplayCardsInmuebles';
 
-import {listaInmuebles, filtrarInmuebles} from '../../Api/Rule_auth_inmobiliaria';
-// import {useNavigate} from "react-router-dom";
+import {listaInmueblesBuscar, filtrarInmuebles} from '../../Api/Rule_auth_inmobiliaria';
 
-import '../../App.css';
+
+// import '../../App.css';
 import './buscadorpage.css';
 
 function BuscadorPage() {
@@ -21,7 +21,7 @@ function BuscadorPage() {
    
 
     useEffect(()=>{
-     listaInmuebles()
+      listaInmueblesBuscar()
     .then((response)=> {
         setInmuebles(response);
         setDatosIniciales(response);
@@ -35,7 +35,6 @@ function BuscadorPage() {
 
     const onClickFiltrar = async (datos) =>{
        await filtrarInmuebles(datos)
-      //  console.log("datos: ",datos)
       .then((response)=> {
           setInmuebles(response)
           // console.log("response desde onclickFiltrar", response);
@@ -45,29 +44,29 @@ function BuscadorPage() {
       });
       
   };
-  const inmuebleBuscar = () => { 
-    const inmueblesFiltered = datosIniciales.filter((innerArray)=>{
-        if(innerArray.departamento.includes(ObjetoSelect.Departamento.value)){
-          return true;
-        }
-        else if (innerArray.departamento.includes(ObjetoSelect.Departamento.value) && innerArray.tipo_inmueble.includes(ObjetoSelect.Tipo.value)){
-          return true;
+  // const inmuebleBuscar = () => { 
+  //   const inmueblesFiltered = datosIniciales.filter((innerArray)=>{
+  //       if(innerArray.departamento.includes(ObjetoSelect.Departamento.value)){
+  //         return true;
+  //       }
+  //       else if (innerArray.departamento.includes(ObjetoSelect.Departamento.value) && innerArray.tipo_inmueble.includes(ObjetoSelect.Tipo.value)){
+  //         return true;
 
-        }
-        else {
-          return false;
-        }
+  //       }
+  //       else {
+  //         return false;
+  //       }
   
-    });
-    if (inmueblesFiltered?.length) {
-      setInmuebles(inmueblesFiltered);
-    } else {
-      setInmuebles(datosIniciales);
-    }
+  //   });
+//     if (inmueblesFiltered?.length) {
+//       setInmuebles(inmueblesFiltered);
+//     } else {
+//       setInmuebles(datosIniciales);
+//     }
     
-     console.log("Inmuebles Filtered: ",  inmueblesFiltered);
+//      console.log("Inmuebles Filtered: ",  inmueblesFiltered);
 
-}
+// }
 
   return (
     <>
@@ -80,7 +79,7 @@ function BuscadorPage() {
         ObjetoSelect={ObjetoSelect}
         setObjetoSelect={setObjetoSelect} 
         Inmuebles={inmuebles} 
-        InmuebleBuscar={inmuebleBuscar}
+        InmuebleBuscar={listaInmueblesBuscar}
         onClickFiltrar={onClickFiltrar}
         />  
     </div>

@@ -32,9 +32,9 @@ function App() {
         </div>
         <div className="containerCard">
           <CardInmuebleHome />
+          {/* <CardInmuebleHome />
           <CardInmuebleHome />
-          <CardInmuebleHome />
-          <CardInmuebleHome />
+          <CardInmuebleHome /> */}
         </div>
         <div className="contBtnApp">
           <button className="btnRed btnVerMas">Ver más inmuebles</button>
