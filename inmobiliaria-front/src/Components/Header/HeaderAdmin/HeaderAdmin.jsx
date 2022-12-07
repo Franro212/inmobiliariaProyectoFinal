@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NameUser from "../../ComponentsUser/NameUser/NameUser";
-
 import "./headerAdmin.css";
 import {HiOutlineArrowRightOnRectangle } from "react-icons/hi2";
 import {
@@ -54,7 +52,7 @@ function HeaderAdmin() {
           _hover={{ bg: "var(--white)" }}
           _expanded={{ bg: "var(--white)" }}
         >
-          <NameUser />
+          
           <Avatar src="https://bit.ly/broken-link" mx="5" />
         </MenuButton>
         <MenuList p={4} borderRadius="3rem" _hover={{ bg: "var(--white)" }}>
