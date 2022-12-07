@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NameUser from "../../ComponentsUser/NameUser/NameUser";
+import NameUser from "../../ComponentsUser/NameUser";
 
 import "./headerAdmin.css";
 import {HiOutlineArrowRightOnRectangle } from "react-icons/hi2";

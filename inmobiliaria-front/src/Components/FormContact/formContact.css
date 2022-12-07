@@ -1,6 +1,8 @@
 textarea{
-    resize: none;
+    resize:both;
     height: 5rem;
+    min-height: 10rem;
+    max-height: 20rem;
 }
 
 
