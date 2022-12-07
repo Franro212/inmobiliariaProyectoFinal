@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.13",
     "@chakra-ui/react": "^2.4.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -18,12 +19,7 @@
     "framer-motion": "^7.6.18",
     "fs": "^0.0.1-security",
     "react": "^18.2.0",
-    "react-accessible-accordion": "^5.0.0",
-    "react-bootstrap": "^2.6.0",
-    "react-bootstrap-buttons": "^1.0.0",
-    "react-bootstrap-form": "^0.1.4-beta6",
     "react-bootstrap-range-slider": "^3.0.8",
-    "react-bootstrap-select": "^0.14.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.40.0",
     "react-icons": "^4.7.1",
