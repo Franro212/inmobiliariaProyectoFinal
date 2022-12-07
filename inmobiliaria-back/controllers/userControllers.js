@@ -39,6 +39,7 @@ exports.register = async (req, res) => {
         })
         .then(() => {
           res.json({
+            success: true,
             mensaje: "El usuario se ha registrado correctamente",
           });
         })

@@ -4,7 +4,6 @@ export const listaInmuebles = async ()=>{
     const url = "/api/inmuebles/listaInmueble";
     return await API.get(url)
     .then((response)=>{
-        // localStorage.setItem("token", response.data.token);
         return response.data;
     })
     .catch((error)=>{
@@ -26,6 +25,8 @@ export const buscarId = async ()=>{
     })
 
 }
+
+
 export const agregarInmueble = async (formData, config)=>{
     const url = "/api/inmuebles/nuevi";
     return await API.post(url, formData, config)
@@ -36,8 +37,8 @@ export const agregarInmueble = async (formData, config)=>{
         console.log(error);
         throw error.response.data.error || "Error procesando la solicitud"
     })
-
 }
+
 export const modificar = async ()=>{
     const url = "/api/inmuebles/modificar/:id";
     return await API.put(url)
@@ -45,11 +46,10 @@ export const modificar = async ()=>{
         return response.data;
     })
     .catch((error)=>{
-        console.log(error);
         throw error.response.data.error || "Error procesando la solicitud"
     })
-
 }
+
 export const eliminar = async (id_inmueble)=>{
     const url = `/api/inmuebles/eliminar/${id_inmueble}`;
     return await API.delete(url)
@@ -57,7 +57,6 @@ export const eliminar = async (id_inmueble)=>{
         return response.data;
     })
     .catch((error)=>{
-        console.log(error);
         throw error.response.data.error || "Error procesando la solicitud"
     })
 

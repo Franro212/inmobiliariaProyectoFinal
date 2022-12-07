@@ -20,10 +20,7 @@ function CardInmuebleHome() {
   }, []);
   return (
     <>
-      {inmuebles.map((inmueble) => {
-        
-            
-        
+      {inmuebles.map((inmueble) => { 
         return(
 
         <div className="contCard">
