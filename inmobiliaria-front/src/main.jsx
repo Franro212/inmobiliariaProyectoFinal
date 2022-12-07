@@ -17,6 +17,7 @@ import BuscadorPage from './Components/BuscadorPage/BuscadorPage';
 // ============ STYLE ===============
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
+import Empresa from './Components/Empresa/Empresa';
 
 const router = createBrowserRouter([
 
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
 {
   path: "gestionPublicaciones",
   element: <GestionPublicaciones />,
+},
+{
+  path: "buscador",
+  element: <BuscadorPage/>
+},
+{
+  path: "empresa",
+  element: <Empresa/>
 },
 
 {
