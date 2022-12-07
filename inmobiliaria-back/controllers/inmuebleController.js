@@ -207,4 +207,63 @@ exports.photo = (req, res) => {
         }
       });
   };
+
+
   
+
+  /****FILTRAR INMUEBLE**** */
+exports.filtrarInmueble = (req, res) => {
+  const { departamento, tipo_inmueble, precio } = req.body;
+  console.log("¿Qué departamento ingresa?", departamento);
+  console.log("¿Qué tipo_inmueble ingresa?", tipo_inmueble);
+  console.log("¿Que precio ingresa?", precio);
+
+  // console.log('¿newPrice funciona?',newPrice)
+
+  knex
+    .select("*")
+    .from("inmuebles")
+    .join("ubicaciones", { id_ubicacion: "inmuebles.id_inmueble" })
+    .then((respuesta) => {
+      let filteredInmuebleOr = respuesta.filter((innerArray) => {
+        if (
+          innerArray.departamento.includes(departamento.value) ||
+          innerArray.tipo_inmueble.includes(tipo_inmueble.value) ||
+          parseInt(innerArray.precio) <= parseInt(precio)
+        ) {
+          // || (innerArray.precio.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."))>=newPrice
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      let filteredInmuebleAnd = respuesta.filter((innerArray) => {
+        if (
+          (innerArray.departamento.includes(departamento.value) &&
+            innerArray.tipo_inmueble.includes(tipo_inmueble.value) &&
+            parseInt(innerArray.precio) <= parseInt(precio)) ||
+          (innerArray.departamento.includes(departamento.value) &&
+          parseInt(innerArray.precio) <= parseInt(precio))
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      if (filteredInmuebleOr.length > 0 && filteredInmuebleAnd.length == 0) {
+        res.send(filteredInmuebleOr);
+      } else if (filteredInmuebleAnd.length > 0) {
+        res.send(filteredInmuebleAnd);
+      } else {
+        res.json(respuesta);
+      }
+      // console.log('FilteredInmuebleAnd:', filteredInmuebleAnd)
+      // console.log('FilteredInmuebleOr:', filteredInmuebleOr)
+      //
+    })
+    .catch((error) => {
+      res.status(400).json({ error: error.message });
+    });
+};
