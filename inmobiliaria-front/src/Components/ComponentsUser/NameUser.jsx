@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {infoUser} from '../../../Api/Rule_user';
+import {infoUser} from '../../Api/Rule_user';
 
 function NameUser() {
   const [nameUser, setNameUser] = useState([]);

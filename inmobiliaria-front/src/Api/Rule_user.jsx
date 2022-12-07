@@ -50,6 +50,7 @@ export const consultarUsuarios = async () => {
         throw error.response.data.error || "Error procesando la solicitud";
       });
   };
+  
 
   export const eliminarUsuarios = async (id_usuario) => {
     const url = `/api/user/deleteUser/${id_usuario}`;

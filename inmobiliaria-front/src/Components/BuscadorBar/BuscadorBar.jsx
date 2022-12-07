@@ -1,9 +1,8 @@
-import React, { useState, useRef } from "react";
-// import Button from 'react-bootstrap/Button';
-// import {Form} from 'react-bootstrap';
-import RangeSlider from "react-bootstrap-range-slider";
-import Select from "react-select";
-import "./buscadorbar.css";
+import React, {useState, useRef} from 'react';
+
+import RangeSlider from 'react-bootstrap-range-slider';
+import Select from 'react-select';
+import './buscadorbar.css';
 
 const optionsDepartamentos = [
   { value: 0, label: "Departamento..." },
@@ -12,12 +11,13 @@ const optionsDepartamentos = [
   { value: "Maldonado", label: "Maldonado" },
 ];
 const optionsTipoInmuebles = [
-  { value: 0, label: "Tipo Inmueble..." },
+     { value:0,label:'Tipo Inmueble...'},
 
-  { value: "Apartamento", label: "Apartamento" },
-  { value: "Casa", label: "Casa" },
-  { value: "Terreno", label: "Terreno" },
-];
+    { value: 'Apartamento', label: 'Apartamento' },
+    { value: 'Casa', label: 'Casa' },
+    { value: 'Terreno', label: 'Terreno' }
+  ] 
+ 
 
 function BuscadorBar(props) {
   // const [ObjetoSelect, setObjetoSelect] = useState({

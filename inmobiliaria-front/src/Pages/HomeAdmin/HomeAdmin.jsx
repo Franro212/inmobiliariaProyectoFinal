@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NameUser from "../../Components/ComponentsUser/NameUser/NameUser";
+import NameUser from "../../Components/ComponentsUser/NameUser";
 import HeaderAdmin from "../../Components/Header/HeaderAdmin/HeaderAdmin";
 
 import {
@@ -41,9 +41,11 @@ function HomeAdmin() {
         </Box>
 
         <Flex mt="10" gap="20">
-          <Card textAlign="center" w="xl" bg='var(--gray)' borderRadius='2rem'>
+          
+
+          <Card  textAlign="center" alignItems='center' w="50%" bg='var(--gray)' borderRadius='2rem' p='10'>
             <CardBody>
-              <Image src="assets/casa.png" alt="Icono de casa" w="10rem" />
+              <Image src="assets/user-interface.png" alt="Icono interface" w="10rem" display='inline-block'/>
 
               <Text fontSize="2rem" my="10">
                 Gestión de publicaciones
@@ -51,7 +53,8 @@ function HomeAdmin() {
             </CardBody>
             <CardFooter>
               <Button
-                fontSize="1.6rem"
+                display='flex'
+                fontSize="2xl"
                 p="8"
                 borderRadius="2rem"
                 bg="var(--red)"
@@ -63,10 +66,11 @@ function HomeAdmin() {
               </Button>
             </CardFooter>
           </Card>
+          
 
-          <Card textAlign="center" w="xl" bg='var(--gray)' borderRadius='2rem'>
-            <CardBody>
-              <Image src="assets/perfil(1).png" alt="Icono de casa" w="10rem" />
+          <Card textAlign="center" alignItems='center' w="50%" bg='var(--gray)' borderRadius='2rem' p='10'>
+            <CardBody flexDirection='column' alignItems='center'>
+              <Image src="assets/perfil.png" alt="Icono de casa" w="10rem" display='inline-block' />
 
               <Text fontSize="2rem" my="10">
                 Gestión de usuarios
@@ -74,13 +78,13 @@ function HomeAdmin() {
             </CardBody>
             <CardFooter>
               <Button
-                fontSize="1.6rem"
+                fontSize="2xl"
                 p="8"
                 borderRadius="2rem"
                 bg="var(--red)"
                 color='var(--white)'
               >
-                <Link to={"/gestionPublicaciones"}>
+                <Link to={"/gestionUsuarios"}>
                   Ir a gestionar usuarios
                 </Link>
               </Button>
