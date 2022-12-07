@@ -50,8 +50,8 @@ function FormContact() {
           <label>
             <textarea
               className="inputForm"
-              maxlength='1000'
-            minlength='10'
+              maxLength='1000'
+            minLength='10'
               placeholder="Deja tu consulta aquí"
               id="message"
         name="message"         
