@@ -5,12 +5,16 @@ const {
     inmuebleNuevo,
     modificarInmueble,
     eliminarInmueble,
+    filtrarInmueble,
     photo,
     buscarById,
     
-  } = require("../controllers/inmuebleController");
+  } = require("../controllers/inmuebleControllers");
+  const { verifyToken } = require("../validators/auth");
+  const {verifyPerfil,verifyPerfil2} = require("../validators/perfil");
  
-  
+  router.post("/inmueble/listainmueble/filtrar", filtrarInmueble);
+
  
    router.get("/inmuebles/listaInmueble", listaInmueble);
 

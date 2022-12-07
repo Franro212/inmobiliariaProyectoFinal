@@ -12,6 +12,20 @@ export const listaInmuebles = async ()=>{
     })
 
 }
+
+export const filtrarInmuebles = async(body) =>{
+    let url="api/inmueble/listainmueble/filtrar";
+    return await API.post(url,body)
+    .then((response)=>{
+    return response.data;
+    })
+
+        throw error.response.data.error || "Error procesando la solicitud"
+    })
+
+}
+
+
 export const buscarId = async ()=>{
     let url = "/api/inmuebles/buscar/:id";
     return await API.get(url)
@@ -24,6 +38,8 @@ export const buscarId = async ()=>{
     })
 
 }
+
+
 export const agregarInmueble = async (formData, config)=>{
     let url = "/api/inmuebles/nuevo";
     return await API.post(url, formData, config)
@@ -58,3 +74,4 @@ export const eliminar = async ()=>{
     })
 
 }
+

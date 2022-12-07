@@ -61,8 +61,20 @@ function RegisterUser() {
       {errors.nombre?.type === "required" && <span>El nombre es requerido</span>}
               </label>
 
-              <br />
+        <label>
+          <input
+          
+            placeholder="Email"
+            required
+            type="email"
+            value={email}
+            onChange={handleEmail}
+          />
+        </label>
 
+<<<<<<< HEAD
+        <br />
+=======
               <label>
                 <input
                   className="input-form"
@@ -76,9 +88,36 @@ function RegisterUser() {
                 <br />
       {errors.email?.type === "required" && <span>El email es requerido</span>}
               </label>
+>>>>>>> d80a5479463cfe536cfa1ac092f126afd31cb489
 
-              <br />
+        <label>
+          <input
+       
+            placeholder="Password"
+            required
+            autoComplete="none"
+            type="password"
+            value={password}
+            onChange={handlePassword}
+          />
+        </label>
 
+<<<<<<< HEAD
+        <label>
+          <input
+    
+            placeholder="Tipo de usuario"
+            required
+            autoComplete="none"
+            type="text"
+            value={tipoUser}
+            onChange={handleTipoUser}
+          />
+        </label>
+
+        <br />
+        <br />
+=======
               <label>
                 <input
                   className="input-form"
@@ -118,24 +157,16 @@ function RegisterUser() {
          
         </select>
               </label>
+>>>>>>> d80a5479463cfe536cfa1ac092f126afd31cb489
 
-              <br />
-              <br />
-
-              <div className="container-btn">
-                <button className="btn" type="submit">
-                  Añadir usuario
-                </button>
-              </div>
-            </form>
-          </div>
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
-  
-
-  </>
-  )
+     
+          <button className="btn" type="submit">
+            Añadir usuario
+          </button>
+ 
+      </form>
+    </>
+  );
 }
 
-export default RegisterUser
+export default RegisterUser;

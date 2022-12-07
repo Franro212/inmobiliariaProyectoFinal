@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { consultarUsuarios } from "../../../Api/Rule_user";
+import Accordion from 'react-bootstrap/Accordion';
 
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box, 
-  ChakraProvider
-} from "@chakra-ui/react";
+
 
 import "./ListUsers.css";
 
@@ -31,17 +24,11 @@ function ListUsers() {
   }, []);
 
   return (
-      <Accordion allowToggle pr="12">
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Lista de usuarios
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
+   
+    <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Body>
             {usuarios &&
               usuarios.map((usuario) => {
                 return (
@@ -50,10 +37,9 @@ function ListUsers() {
                   </div>
                 );
               })}
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
-   
+              </Accordion.Body>
+            </Accordion.Item>
+                    </Accordion>
   );
 }
 
