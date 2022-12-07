@@ -9,13 +9,10 @@ const {
     photo,
     buscarById,
     
-  } = require("../controllers/inmuebleControllers");
-  const { verifyToken } = require("../validators/auth");
-  const {verifyPerfil,verifyPerfil2} = require("../validators/perfil");
+  } = require("../controllers/inmuebleController");
  
   router.post("/inmueble/listainmueble/filtrar", filtrarInmueble);
 
- 
    router.get("/inmuebles/listaInmueble", listaInmueble);
 
    router.get("/inmuebles/photo/:id", photo);

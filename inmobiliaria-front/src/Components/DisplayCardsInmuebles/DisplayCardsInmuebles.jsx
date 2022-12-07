@@ -1,21 +1,23 @@
 import React from "react";
 import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
-import "./displaycardsinmuebles.css";
-import "../CardInmueble/cardInmueble.css";
-
+import "../CardInmueble/cardInmueble.css"
 function DisplayCardsInmuebles({ Inmuebles }) {
   // const objetoInmueble = Inmuebles;
   // const CardsDisplayed = (objetoInmueble) => {};
 
   return (
-    <>
-      <div className="cardConteiner">
+    
+      <div>
         {Inmuebles &&
           Inmuebles.map((inmueble, index) => {
             return (
               <div className="contCard" key={index}>
                 <div className="contImg">
-                  <img className="imgCard" src="/assets/casa1.jpeg" alt="" />
+                <img
+              src={`http://localhost:8000/api/inmuebles/photo/${inmueble.id_inmueble}`}
+              alt="foto usuario"
+              height={250}
+            ></img>
                   <span className="tipoOperacion">
                     {inmueble.tipo_operacion}
                   </span>
@@ -44,8 +46,8 @@ function DisplayCardsInmuebles({ Inmuebles }) {
             );
           })}
       </div>
-    </>
-  );
+    
+  )
 }
 
 export default DisplayCardsInmuebles;

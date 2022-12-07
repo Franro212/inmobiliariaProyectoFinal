@@ -20,6 +20,8 @@ export const filtrarInmuebles = async(body) =>{
     return response.data;
     })
 
+    .catch((error)=>{
+        console.log(error);
         throw error.response.data.error || "Error procesando la solicitud"
     })
 
