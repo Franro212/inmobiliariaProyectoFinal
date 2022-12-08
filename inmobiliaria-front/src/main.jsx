@@ -18,6 +18,9 @@ import BuscadorPage from './Components/BuscadorPage/BuscadorPage';
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import Empresa from './Components/Empresa/Empresa';
+import Servicios from './Components/servicios/Servicios';
+import FormContact from './Components/FormContact/FormContact';
+import Estudio from './Components/Estudio/Estudio';
 
 const router = createBrowserRouter([
 
@@ -53,11 +56,16 @@ const router = createBrowserRouter([
   path: "empresa",
   element: <Empresa/>
 },
+{
+  path: "estudio",
+  element: <Estudio/>
+},
 
 {
   path: "buscadorPage",
   element: <BuscadorPage />,
 },
+
 
 ]);
 

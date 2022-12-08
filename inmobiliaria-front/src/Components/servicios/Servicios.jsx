@@ -18,7 +18,7 @@ function Servicios() {
 
   return (
     <div className="servicesContainer">
-      <h3 className='secSubtitle'>Servicios</h3>
+      <h3 className='secSubtitle' id='servicios'>Servicios</h3>
     <h2 className='secTitle'>¿Qué ofrecemos?</h2>
     <p className='description'>Nuestras soluciones están acorde a lo que necesitas junto con la asesoría personalizada.</p>
     <ul className="ulCardServicio">

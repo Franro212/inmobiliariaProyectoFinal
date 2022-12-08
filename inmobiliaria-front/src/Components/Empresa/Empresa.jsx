@@ -9,7 +9,7 @@ function Empresa() {
         <Header/>
         <div className='containerEmpresa'>
             <div className='containerImagen'>
-        <img className='imagenEmpresa' src="./public/assets/estudio_integral.jpeg" alt="inmobiliaria" />
+        <img className='imagenEmpresa' src="/assets/estudio_integral.jpeg" alt="inmobiliaria" />
             </div>
             <div className='containerCont'>
 

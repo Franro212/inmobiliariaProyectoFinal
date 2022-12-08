@@ -59,7 +59,23 @@
   margin: 20rem 0rem;
 }
 
+.contFormMap{
+display: flex;
+margin: 0 27rem;
+align-items: center;
+
+
+}
 .containerFormContact{
   margin: 0 auto;
+  
+}
+.contMap{
+  width:50%;
+  
+  
+  
+  
+  
 }
 

@@ -5,10 +5,11 @@ import Header from "../../Components/Header/Header";
 import Main from "../../Components/main/Main";
 import Servicios from "../../Components/servicios/Servicios";
 import Footer from "../../Components/Footer/Footer";
+import FormContact from "../../Components/FormContact/FormContact";
 import CardInmuebleHome from "../../Components/CardInmueble/CardInmueble";
+import { AspectRatio } from '@chakra-ui/react'
 
 import "./App.css";
-import FormContact from "../../Components/FormContact/FormContact";
 
 function App() {
   return (
@@ -40,18 +41,29 @@ function App() {
 
       <div className="containerSectContact">
         <div className="containerTitleSection">
-          <h3 className="secSubtitle">Contacto</h3>
+          <h3 className="secSubtitle" id="contacto">Contacto</h3>
           <h2 className="secTitle">¿Tienes alguna duda?</h2>
             <p className="description">
               Sus comentarios y sugerencias son importantes para poder mejorar
               nuestra atención, gracias por contactarnos
             </p>
         </div>
+           <div className="contFormMap" >
 
-
+           <div className="contMap">
+         
+           <AspectRatio ratio={16 / 9}>
+  <iframe
+    src='https://www.google.com/maps/embed/v1/place?q=inmobiliaria+rossi&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8'
+  />
+</AspectRatio>
+          
+            
+           </div>
           <div className="containerFormContact">
             <FormContact />
           </div>
+           </div>
     
       </div>
 
