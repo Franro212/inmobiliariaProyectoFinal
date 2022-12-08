@@ -85,9 +85,7 @@ hr{
     background: white;
   }
   
-  /* .tipoOperacion:hover {
-    color: var(--red);
-  } */
+ 
   
   .contCardDisplayInmuebles:hover {
     transform: scale(1.05);

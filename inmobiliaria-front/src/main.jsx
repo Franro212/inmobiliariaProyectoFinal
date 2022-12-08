@@ -11,7 +11,7 @@ import PageLogin from './Pages/PageLogin/PageLogin';
 import GestionUsuarios from './Pages/GestionUsuarios/GestionUsuarios';
 import GestionPublicaciones from './Pages/GestionPublicaciones/GestionPublicaciones';
 import BuscadorPage from  './Components/BuscadorPage/BuscadorPage';
-import DetalleCard from './Components/DetalleCard/DetalleCard'
+import DetalleCard from './Components/DetalleCard/DetalleCard';
 
 
 // ============ STYLE ===============
