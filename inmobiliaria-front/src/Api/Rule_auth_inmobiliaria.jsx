@@ -23,9 +23,7 @@ export const buscarId = async (id_inmueble)=>{
         console.log(error);
         throw error.response.data.error || "Error procesando la solicitud"
     })
-
 }
-
 
 export const agregarInmueble = async (formData, config)=>{
     const url = "/api/inmuebles/nuevo";
@@ -66,7 +64,6 @@ export const filtrarInmuebles = async(body) =>{
     let url="api/inmueble/listainmueble/filtrar";
     return await API.post(url,body)
     .then((response)=>{
-
         return response.data;
     })
     .catch((error)=>{

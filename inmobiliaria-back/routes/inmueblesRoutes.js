@@ -12,6 +12,7 @@ const {
   } = require("../controllers/inmuebleController");
  
   router.post("/inmueble/listainmueble/filtrar", filtrarInmueble);
+ 
    router.get("/inmuebles/listaInmueble", listaInmueble);
 
    router.get("/inmuebles/photo/:id", photo);

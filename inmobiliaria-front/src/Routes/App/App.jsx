@@ -61,7 +61,13 @@ function App() {
             
            </div>
           <div className="containerFormContact">
+            <div className="imgContact">
+              <img src="/assets/mapa.png" alt="" className="imgMap"/>
+            </div>
+            
+
             <FormContact />
+            
           </div>
            </div>
     

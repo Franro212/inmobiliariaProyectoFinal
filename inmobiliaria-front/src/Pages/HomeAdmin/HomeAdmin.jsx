@@ -41,11 +41,21 @@ function HomeAdmin() {
         </Box>
 
         <Flex mt="10" gap="20">
-          
-
-          <Card  textAlign="center" alignItems='center' w="50%" bg='var(--gray)' borderRadius='2rem' p='10'>
+          <Card
+            textAlign="center"
+            alignItems="center"
+            w="50%"
+            bg="var(--gray)"
+            borderRadius="2rem"
+            p="10"
+          >
             <CardBody>
-              <Image src="assets/user-interface.png" alt="Icono interface" w="10rem" display='inline-block'/>
+              <Image
+                src="assets/user-interface.png"
+                alt="Icono interface"
+                w="10rem"
+                display="inline-block"
+              />
 
               <Text fontSize="2rem" my="10">
                 Gestión de publicaciones
@@ -53,12 +63,15 @@ function HomeAdmin() {
             </CardBody>
             <CardFooter>
               <Button
-                display='flex'
+                display="flex"
                 fontSize="2xl"
                 p="8"
                 borderRadius="2rem"
                 bg="var(--red)"
-                color='var(--white)'
+                color="var(--white)"
+                _hover={{
+                  background: "var(--red-second)",
+                }}
               >
                 <Link to={"/gestionPublicaciones"}>
                   Ir a gestionar Publicaciones
@@ -66,11 +79,22 @@ function HomeAdmin() {
               </Button>
             </CardFooter>
           </Card>
-          
 
-          <Card textAlign="center" alignItems='center' w="50%" bg='var(--gray)' borderRadius='2rem' p='10'>
-            <CardBody flexDirection='column' alignItems='center'>
-              <Image src="assets/perfil.png" alt="Icono de casa" w="10rem" display='inline-block' />
+          <Card
+              textAlign="center"
+              alignItems="center"
+              w="50%"
+              bg="var(--gray)"
+              borderRadius="2rem"
+              p="10"
+          >
+            <CardBody flexDirection="column" alignItems="center">
+              <Image
+                src="assets/perfil.png"
+                alt="Icono de casa"
+                w="10rem"
+                display="inline-block"
+              />
 
               <Text fontSize="2rem" my="10">
                 Gestión de usuarios
@@ -82,11 +106,12 @@ function HomeAdmin() {
                 p="8"
                 borderRadius="2rem"
                 bg="var(--red)"
-                color='var(--white)'
+                color="var(--white)"
+                _hover={{
+                  background: "var(--red-second)",
+                }}
               >
-                <Link to={"/gestionUsuarios"}>
-                  Ir a gestionar usuarios
-                </Link>
+                <Link to={"/gestionUsuarios"}>Ir a gestionar usuarios</Link>
               </Button>
             </CardFooter>
           </Card>

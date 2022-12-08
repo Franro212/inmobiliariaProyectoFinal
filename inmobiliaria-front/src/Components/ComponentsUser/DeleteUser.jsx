@@ -7,7 +7,6 @@ import {
   Button,
   Input,
   Flex,
-  SliderProvider
 } from "@chakra-ui/react";
 
 function DeleteUser() {

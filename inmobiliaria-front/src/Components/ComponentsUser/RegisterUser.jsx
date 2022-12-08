@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { registrarUsuario } from "../../Api/Rule_user";
 
+
 import { AddIcon } from "@chakra-ui/icons";
 
 import {
@@ -40,28 +41,31 @@ function RegisterUser() {
 
   return (
     <>
+  
       <Button
         onClick={onOpen}
         fontSize="2xl"
         textAlign="center"
-        w="10%"
+        p='10'
         h="20"
         rounded="full"
         bg="var(--red)"
         color="var(--white)"
         gap={2}
+        _hover={{
+          background: "var(--red-second)",
+        }}
       >
         <AddIcon boxSize={5} />
         Crear Usuario
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose} isCentered borderRadius="xxl">
+      <Modal isOpen={isOpen} onClose={onClose} isCentered borderRadius="xxl" >
         <ModalOverlay />
         <ModalContent
           w="50%"
           h="auto"
           maxW="4xl"
-          // fontSize='2xl'
           rounded="2xl"
           p="5"
         >
@@ -83,7 +87,7 @@ function RegisterUser() {
                 size="lg"
                 rounded="20"
                 my="5"
-                className="input-form"
+
                 placeholder="Nombre"
                 type="text"
                 {...register("nombre", {
@@ -197,6 +201,9 @@ function RegisterUser() {
                 p="10"
                 rounded="20"
                 type="submit"
+                _hover={{
+                  background: "var(--red-second)",
+                }}
               >
                 Añadir usuario
               </Button>
