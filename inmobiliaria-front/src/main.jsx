@@ -14,9 +14,14 @@ import BuscadorPage from  './Components/BuscadorPage/BuscadorPage';
 import DetalleCard from './Components/DetalleCard/DetalleCard';
 
 
+
 // ============ STYLE ===============
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
+import Empresa from './Components/Empresa/Empresa';
+import Servicios from './Components/servicios/Servicios';
+import FormContact from './Components/FormContact/FormContact';
+import Estudio from './Components/Estudio/Estudio';
 
 const router = createBrowserRouter([
 
@@ -45,13 +50,27 @@ const router = createBrowserRouter([
   element: <GestionPublicaciones />,
 },
 {
+  path: "buscador",
+  element: <BuscadorPage/>
+},
+{
+  path: "empresa",
+  element: <Empresa/>
+},
+{
+  path: "estudio",
+  element: <Estudio/>
+},
+
+{
   path: "buscadorPage",
   element: <BuscadorPage/>,
 },
 {
   path: "buscadorPage/detalleInmueble/:id_inmueble",
   element: <DetalleCard />,
-}
+},
+
 
 ]);
 

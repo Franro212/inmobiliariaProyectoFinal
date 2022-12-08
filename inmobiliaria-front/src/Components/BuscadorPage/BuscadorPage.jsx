@@ -7,7 +7,9 @@ import DisplayCardsInmuebles from '../DisplayCardsInmuebles/DisplayCardsInmueble
 import {listaInmueblesBuscar, filtrarInmuebles} from '../../Api/Rule_auth_inmobiliaria';
 
 
+
 import './buscadorpage.css';
+import './../../Routes/App/App.css'
 
 function BuscadorPage() {
     const[inmuebles, setInmuebles] = useState([]);
@@ -61,7 +63,7 @@ function BuscadorPage() {
         onClickFiltrar={onClickFiltrar}
         />  
     </div>
-    <div>
+    <div className='containerCard'>
       <DisplayCardsInmuebles  Inmuebles={inmuebles}
       />
     </div>

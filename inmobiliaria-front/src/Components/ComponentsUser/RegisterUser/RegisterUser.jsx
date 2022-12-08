@@ -61,20 +61,8 @@ function RegisterUser() {
       {errors.nombre?.type === "required" && <span>El nombre es requerido</span>}
               </label>
 
-        <label>
-          <input
-          
-            placeholder="Email"
-            required
-            type="email"
-            value={email}
-            onChange={handleEmail}
-          />
-        </label>
+              <br />
 
-<<<<<<< HEAD
-        <br />
-=======
               <label>
                 <input
                   className="input-form"
@@ -88,36 +76,9 @@ function RegisterUser() {
                 <br />
       {errors.email?.type === "required" && <span>El email es requerido</span>}
               </label>
->>>>>>> d80a5479463cfe536cfa1ac092f126afd31cb489
 
-        <label>
-          <input
-       
-            placeholder="Password"
-            required
-            autoComplete="none"
-            type="password"
-            value={password}
-            onChange={handlePassword}
-          />
-        </label>
+              <br />
 
-<<<<<<< HEAD
-        <label>
-          <input
-    
-            placeholder="Tipo de usuario"
-            required
-            autoComplete="none"
-            type="text"
-            value={tipoUser}
-            onChange={handleTipoUser}
-          />
-        </label>
-
-        <br />
-        <br />
-=======
               <label>
                 <input
                   className="input-form"
@@ -157,16 +118,24 @@ function RegisterUser() {
          
         </select>
               </label>
->>>>>>> d80a5479463cfe536cfa1ac092f126afd31cb489
 
-     
-          <button className="btn" type="submit">
-            Añadir usuario
-          </button>
- 
-      </form>
-    </>
-  );
+              <br />
+              <br />
+
+              <div className="container-btn">
+                <button className="btn" type="submit">
+                  Añadir usuario
+                </button>
+              </div>
+            </form>
+          </div>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+  
+
+  </>
+  )
 }
 
-export default RegisterUser;
+export default RegisterUser

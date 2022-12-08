@@ -3,7 +3,6 @@ const formidable = require("formidable")
 const fs = require("fs")
 
 
-
 exports.listaInmueble = (req, res) => {
     knex.select('*')
     .from('inmuebles')
@@ -315,3 +314,4 @@ exports.filtrarInmueble = (req, res) => {
 };
 
   
+

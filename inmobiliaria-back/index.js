@@ -7,7 +7,7 @@ require("dotenv").config();
 
 
 const userRoutes = require("./routes/userRoutes");
-const inmuebleRoutes = require("./routes/inmueblesRoutes");
+ const inmuebleRoutes = require("./routes/inmueblesRoutes")
 
 
 

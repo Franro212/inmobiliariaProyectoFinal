@@ -1,6 +1,4 @@
 import React, {useState, useRef} from 'react';
-// import Button from 'react-bootstrap/Button';
-// import {Form} from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 import Select from 'react-select';
 import './buscadorbar.css';
@@ -26,17 +24,8 @@ const optionsTipoInmuebles = [
   
  
 
-
-
-
 function BuscadorBar(props) {
-    // const [ObjetoSelect, setObjetoSelect] = useState({
-    //     Departamento: '',
-    //     Tipo:'',
-    //     Precio:0,
-    // });
- 
-    
+
     const [valorFinalMax, setValorFinalMax ] = useState(0);
     const [valorFinalMin, setValorFinalMin ] = useState(0);
 
@@ -47,19 +36,22 @@ function BuscadorBar(props) {
      console.log('ObjetoSelect: ', props.ObjetoSelect);
 
 
-   
-    const handleSubmit = (e) => {e.preventDefault()}
-    const selectInputRef = useRef();
-    const onClear = () => {
-      selectInputRef.current.select.clearValue();
-    };
+  console.log("ObjetoSelect: ", props.ObjetoSelect);
+ 
 
-    const initial_state = { my_field: "" }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  const selectInputRef = useRef();
+  const onClear = () => {
+    selectInputRef.current.select.clearValue();
+  };
+
+  const initial_state = { my_field: "" };
 
   return (
     <div className="contanedorTemporal">
-    
-{/* react-hook-form
+      {/* react-hook-form
 formik
 Option: useState para cada valores inputs. */}
 
@@ -178,7 +170,7 @@ Option: useState para cada valores inputs. */}
     </div>              
         
     </div>
-  )
+  );
 }
 
 export default BuscadorBar;
