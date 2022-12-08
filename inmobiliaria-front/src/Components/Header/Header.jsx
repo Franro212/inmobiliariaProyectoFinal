@@ -11,7 +11,7 @@ function Header() {
         <nav className='nav'>
             <ul className='navList'>
                 <li className='liHeader'><a className='ancla' href="">Inicio</a></li>
-                <li className='liHeader'><a className='ancla' href="">Empresa</a></li>
+                <li className='liHeader'><Link className='ancla' to={"empresa"}>Empresa</Link></li>
                 <li className='liHeader'><a className='ancla' href="#servicios">Servicios</a></li>
                 <li className='liHeader'><a className='ancla' href="">Estudio</a></li>
                 <li className='liHeader'><a className='ancla' href="#contacto">Contacto</a></li>

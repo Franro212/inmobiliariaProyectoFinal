@@ -17,6 +17,8 @@ import {
 } from "@chakra-ui/react";
 
 function HeaderAdmin() {
+
+
   return (
     <Flex
       minWidth="max-content"
@@ -54,7 +56,7 @@ function HeaderAdmin() {
           _hover={{ bg: "var(--white)" }}
           _expanded={{ bg: "var(--white)" }}
         >
-          <NameUser />
+          <NameUser></NameUser>
           <Avatar src="https://bit.ly/broken-link" mx="5" />
         </MenuButton>
         <MenuList p={4} borderRadius="3rem" _hover={{ bg: "var(--white)" }}>

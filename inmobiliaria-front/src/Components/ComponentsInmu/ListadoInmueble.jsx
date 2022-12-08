@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { listaInmuebles } from "../../Api/Rule_auth_inmobiliaria";
+import React from "react";
+
 
 import {
   Table,
@@ -11,34 +11,19 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 
-function ListadoInmuebles() {
-  const [inmuebles, setInmuebles] = useState([]);
-
-  const consultarInmuebles = async () => {
-    await listaInmuebles()
-      .then((response) => {
-        setInmuebles(response);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
-  useEffect(() => {
-    consultarInmuebles();
-  }, []);
-
+function ListadoInmuebles(props) {
+  const {inmuebles} = props
 
   return (
     <>
 
-      <TableContainer mt='20'>
+      <TableContainer mt='10'>
         <Table variant="simple" size="lg">
-          <Thead >
-            <Tr>
+          <Thead>
+            <Tr h='20'>
               <Th fontSize='2xl'>Id del inmueble</Th>
-              <Th fontSize='2xl'>Imagen</Th>
               <Th fontSize='2xl'>Tipo Operación</Th>
+              <Th fontSize='2xl'>Tipo Inmueble</Th>
               <Th fontSize='2xl'>Cant. baños</Th>
               <Th fontSize='2xl'>Cant. dormitorios</Th>
               <Th fontSize='2xl'>M2 del Terreno</Th>
@@ -58,7 +43,6 @@ function ListadoInmuebles() {
                 return (
                   <Tr key={inmueble.id}>
                     <Td p="5">{inmueble.id_inmueble}</Td>
-                    <Td p="5">{inmueble.file_data}</Td>
                     <Td>{inmueble.tipo_operacion}</Td>
                     <Td>{inmueble.tipo_inmueble}</Td>
                     <Td>{inmueble.banio}</Td>

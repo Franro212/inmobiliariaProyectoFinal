@@ -20,10 +20,15 @@ function CardInmuebleHome() {
   }, []);
   return (
     <>
-      {inmuebles.map((inmueble) => { 
+      {inmuebles.map((inmueble, index) => { 
+        
+       if(index >= 4 ){
+        return null
+       }
+        
         return(
 
-        <div className="contCard">
+        <div className="contCard" >
           <div className="contImg">
             <img
               src={`http://localhost:8000/api/inmuebles/photo/${inmueble.id_inmueble}`}

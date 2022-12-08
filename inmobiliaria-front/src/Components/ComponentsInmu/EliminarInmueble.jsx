@@ -10,7 +10,8 @@ import {
   Flex,
 } from "@chakra-ui/react";
 
-function EliminarInmueble() {
+function EliminarInmueble(props) {
+  const {consultarInmuebles} = props
   const [idInmueble, setIdInmueble] = useState("");
 
   const handleIdInmueble = (e) => {
@@ -24,6 +25,7 @@ function EliminarInmueble() {
     await eliminar(idInmueble)
       .then(() => {
         alert("Inmueble eliminado");
+        consultarInmuebles();
       })
       .catch((error) => {
         alert(error);
