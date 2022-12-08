@@ -17,7 +17,7 @@ function Main() {
         </div>
         <div className='contIconos'>
         <a href="mailto:contacto@inmobiliariarossi.com.uy"><img className='iconoStatic' src="../public/assets/gmail.png" alt="" /></a>
-        <a href="https://wa.me/+59899867688"><img className='iconoStatic' src="../public/assets/whatsapp.png" alt="" /></a>
+        <a target="-blank" href="https://wa.me/+59899867688"><img className='iconoStatic' src="../public/assets/whatsapp.png" alt="" /></a>
         </div>
     </div>
     
