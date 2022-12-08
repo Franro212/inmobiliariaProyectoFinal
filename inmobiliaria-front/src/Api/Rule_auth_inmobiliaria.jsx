@@ -37,11 +37,10 @@ export const listaInmuebles = async ()=>{
 
 
 
-export const buscarId = async ()=>{
-    let url = "/api/inmuebles/buscar/:id";
+export const buscarById = async (id_inmueble)=>{
+    let url = `/api/inmuebles/buscar/${id_inmueble}`;
     return await API.get(url)
     .then((response)=>{
-        localStorage.setItem("token", response.data.token);
         return response.data;
     })
     .catch((error)=>{
@@ -50,6 +49,19 @@ export const buscarId = async ()=>{
     })
 
 }
+
+export const infoInmueble = async () => {
+    const url = "/api/inmuebles/infoInmueble";
+    return await API.get(url)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+        throw error.response.data.error || "Error procesando la solicitud";
+      });
+  };
+
 export const agregarInmueble = async (formData, config)=>{
     let url = "/api/inmuebles/nuevi";
     return await API.post(url, formData, config)

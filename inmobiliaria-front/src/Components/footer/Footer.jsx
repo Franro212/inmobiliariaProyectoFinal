@@ -10,7 +10,7 @@ function Footer() {
         <a href="/">
           <img
             className="logo"
-            src="public\assets\logoSinFondo.png"
+            src="/assets/logoSinFondo.png"
             alt="logo"
           />
         </a>

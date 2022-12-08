@@ -7,8 +7,9 @@ const {
     modificarInmueble,
     eliminarInmueble,
     filtrarInmueble,
-    // photo,
+    photo,
     buscarById,
+    infoInmueble,
     
   } = require("../controllers/inmuebleController");
 
@@ -22,9 +23,11 @@ const {
  
    router.get("/inmuebles/listaInmueble", listaInmueble);
 
-  //  router.get("/inmuebles/photo/:id", photo);
+   router.get("/inmuebles/photo/:id", photo);
 
-   router.get("/inmuebles/buscar/:id", buscarById)
+   router.get("/inmuebles/buscar/:id", buscarById);
+   router.get("/inmuebles/infoInmueble", infoInmueble);
+
   
   router.post("/inmuebles/nuevo",  inmuebleNuevo);
   

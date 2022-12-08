@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import Header from '../Header/Header';
 import BuscadorBar from '../BuscadorBar/BuscadorBar';
+import Footer from '../footer/Footer';
 import DisplayCardsInmuebles from '../DisplayCardsInmuebles/DisplayCardsInmuebles';
-
 import {listaInmueblesBuscar, filtrarInmuebles} from '../../Api/Rule_auth_inmobiliaria';
 
 
-// import '../../App.css';
 import './buscadorpage.css';
 
 function BuscadorPage() {
@@ -16,7 +15,9 @@ function BuscadorPage() {
     const [ObjetoSelect, setObjetoSelect] = useState({
       departamento:'',
       tipo_inmueble:'',
-      precio:0,
+      tipo_operacion:'',
+      precio_max:0,
+      precio_min:0,
   });
    
 
@@ -37,36 +38,13 @@ function BuscadorPage() {
        await filtrarInmuebles(datos)
       .then((response)=> {
           setInmuebles(response)
-          // console.log("response desde onclickFiltrar", response);
       })
       .catch((error)=>{
           alert(error);
       });
       
   };
-  // const inmuebleBuscar = () => { 
-  //   const inmueblesFiltered = datosIniciales.filter((innerArray)=>{
-  //       if(innerArray.departamento.includes(ObjetoSelect.Departamento.value)){
-  //         return true;
-  //       }
-  //       else if (innerArray.departamento.includes(ObjetoSelect.Departamento.value) && innerArray.tipo_inmueble.includes(ObjetoSelect.Tipo.value)){
-  //         return true;
 
-  //       }
-  //       else {
-  //         return false;
-  //       }
-  
-  //   });
-//     if (inmueblesFiltered?.length) {
-//       setInmuebles(inmueblesFiltered);
-//     } else {
-//       setInmuebles(datosIniciales);
-//     }
-    
-//      console.log("Inmuebles Filtered: ",  inmueblesFiltered);
-
-// }
 
   return (
     <>
@@ -87,7 +65,7 @@ function BuscadorPage() {
       <DisplayCardsInmuebles  Inmuebles={inmuebles}
       />
     </div>
-
+    <div><Footer/></div>
     </>
   )
 }

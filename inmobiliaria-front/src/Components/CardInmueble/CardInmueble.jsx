@@ -20,8 +20,12 @@ function CardInmuebleHome() {
   }, []);
   return (
     <>
-      {inmuebles.map((inmueble) => {
-        
+      {inmuebles.map((inmueble, index) => {
+          
+          if(index >= 4 )
+          {
+            return null
+           }
             
         
         return(
@@ -42,7 +46,7 @@ function CardInmuebleHome() {
             <p className="precio">U$S{inmueble.precio}</p>
             <hr />
             <div className="especificaciones">
-              <p>
+              <p >
                 <FaBed className="icono" />
                 {inmueble.dormitorio}
               </p>

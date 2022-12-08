@@ -29,7 +29,7 @@ exports.listaInmueble = (req, res) => {
         dormitorio,
         banio,    
         m2_terreno,
-        m2_edificado,
+        m2_edificacion,
         ciudad,
         descripcion,
         precio, 
@@ -38,38 +38,38 @@ exports.listaInmueble = (req, res) => {
         barrio,
         direccion,
        } = fields;
-       if(!tipo_operacion || !tipo_operacion.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, tipo_operacion"})
-      }
-      if(!tipo_inmueble || !tipo_inmueble.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, tipo_inmueble"})
-      }
-      if(!m2_terreno || !m2_terreno.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, metros_cuadrados"})
-      }
-      if(!precio || !precio.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, precio"})
-      }
-      if(!direccion || !direccion.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, direccion"})
-      }
-      if(!ciudad || !ciudad.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, ciudad"})
-      }
-      if(!departamento || !departamento.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, departamento"})
-      }
-      if(!barrio || !barrio.length){
-        return res.status(400)
-        .json({error:"Este campo es obligatorio, barrio"})
-      }
+      //  if(!tipo_operacion || !tipo_operacion.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, tipo_operacion"})
+      // }
+      // if(!tipo_inmueble || !tipo_inmueble.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, tipo_inmueble"})
+      // }
+      // if(!m2_terreno || !m2_terreno.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, metros_cuadrados"})
+      // }
+      // if(!precio || !precio.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, precio"})
+      // }
+      // if(!direccion || !direccion.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, direccion"})
+      // }
+      // if(!ciudad || !ciudad.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, ciudad"})
+      // }
+      // if(!departamento || !departamento.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, departamento"})
+      // }
+      // if(!barrio || !barrio.length){
+      //   return res.status(400)
+      //   .json({error:"Este campo es obligatorio, barrio"})
+      // }
   
       
       
@@ -84,6 +84,7 @@ exports.listaInmueble = (req, res) => {
   
             file_data = fs.readFileSync(files.file.filepath);
             file_type = files.file.mimetype;
+           
           }
   
             knex("inmuebles")
@@ -93,7 +94,7 @@ exports.listaInmueble = (req, res) => {
                 dormitorio:dormitorio,
                 banio:banio,
                 m2_terreno:m2_terreno,
-                m2_edificado:m2_edificado,
+                m2_edificacion:m2_edificacion,
                 descripcion:descripcion,
                 precio:precio,
                 garantia:garantia,
@@ -223,48 +224,85 @@ exports.photo = (req, res) => {
     });
 };
 
+
+exports.infoInmueble = (req, res) => {
+  res.json(req.params.id_inmueble);
+};
+
 /****FILTRAR INMUEBLE**** */
 exports.filtrarInmueble = (req, res) => {
-  const { departamento, tipo_inmueble, precio } = req.body;
+  const { 
+    departamento,
+    tipo_inmueble,
+    tipo_operacion,
+    precio_max,
+    precio_min 
+  } = req.body;
   console.log("¿Qué departamento ingresa?", departamento);
   console.log("¿Qué tipo_inmueble ingresa?", tipo_inmueble);
-  console.log("¿Que precio ingresa?", precio);
+  console.log("¿Que precio maximo ingresa?", precio_max);
+  console.log("¿Que precio min ingresa?", precio_min);
+  console.log("¿Que Tipo de operacion  ingresa?", tipo_operacion);
+
+
 
   knex.select('*')
   .from('inmuebles')
     .then((respuesta) => {
-      let filteredInmuebleOr = respuesta.filter((innerArray) => {
+      let filteredInmueble = respuesta.filter((innerArray) => {
         if (
-          innerArray.departamento.includes(departamento.value) ||
-          innerArray.tipo_inmueble.includes(tipo_inmueble.value) ||
-          parseInt(innerArray.precio) <= parseInt(precio)
-        ) {
-          // || (innerArray.precio.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1."))>=newPrice
-          return true;
-        } else {
+          innerArray.departamento.includes(departamento.value) )
+         {
+          return innerArray.departamento;
+        }
+        else if (innerArray.tipo_inmueble.includes(tipo_inmueble.value)){
+          return innerArray.tipo_inmueble;
+        
+        } 
+        else if (innerArray.tipo_operacion.includes(tipo_operacion.value)){
+          return innerArray.tipo_operacion;
+        
+        } 
+        else if (innerArray.precio>=parseInt(precio_min) && innerArray.precio<parseInt(precio_max)) {
+          return innerArray.precio;
+
+        }
+        else if (parseInt(innerArray.precio)>parseInt(precio_min) && parseInt(innerArray.precio)<=parseInt(precio_max) && (innerArray.tipo_operacion.includes(tipo_operacion.value))&& (innerArray.tipo_inmueble.includes('')&& innerArray.departamento.includes(''))) {
+          return (innerArray.precio && innerArray.tipo_operacion);
+
+        }
+
+         else {
           return false;
         }
       });
 
-      let filteredInmuebleAnd = respuesta.filter((innerArray) => {
-        if (
-          (innerArray.departamento.includes(departamento.value) &&
-            innerArray.tipo_inmueble.includes(tipo_inmueble.value) &&
-            parseInt(innerArray.precio) <= parseInt(precio)) ||
-          (innerArray.departamento.includes(departamento.value) &&
-          parseInt(innerArray.precio) <= parseInt(precio))
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+      // let filteredInmuebleAnd = respuesta.filter((innerArray) => {
+      //   if (
+      //     (innerArray.departamento.includes(departamento.value) &&
+      //     innerArray.tipo_operacion.includes(tipo_operacion.value) &&
+      //       innerArray.tipo_inmueble.includes(tipo_inmueble.value) &&
+      //       parseInt(innerArray.precio) <= parseInt(precio_max) &&
+      //       parseInt(innerArray.precio) > parseInt(precio_min))) {
+      //         return (innerArray.departamento && innerArray.tipo_inmueble && innerArray.precio && innerArray.tipo_operacion);
 
-      if (filteredInmuebleOr.length > 0 && filteredInmuebleAnd.length == 0) {
-        res.send(filteredInmuebleOr);
-      } else if (filteredInmuebleAnd.length > 0) {
-        res.send(filteredInmuebleAnd);
-      } else {
+      //       }
+      //      else if (
+      //         innerArray.tipo_operacion.includes(tipo_operacion.value) &&
+      //           parseInt(innerArray.precio) <= parseInt(precio_max) &&
+      //           parseInt(innerArray.precio) > parseInt(precio_min)) 
+      //           {
+      //             return (innerArray.precio && innerArray.tipo_operacion);
+      //           }    
+         
+      //   else {
+      //     return false;
+      //   }
+      // });
+
+      if (filteredInmueble.length != 0) {
+        res.send(filteredInmueble);
+      }else {
         res.json(respuesta);
       }
       // console.log('FilteredInmuebleAnd:', filteredInmuebleAnd)
