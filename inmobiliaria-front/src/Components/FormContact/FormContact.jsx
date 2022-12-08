@@ -12,7 +12,7 @@ function FormContact() {
 
   return (
     <div>
-      <div className="containerLogin">
+      <div className="containerLogin" >
         <form onSubmit={handleSubmit} className="formContact">
           <label>
             <input

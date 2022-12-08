@@ -13,8 +13,8 @@ export const listaInmuebles = async ()=>{
 }
 
 
-export const buscarId = async ()=>{
-    const url = "/api/inmuebles/buscar/:id";
+export const buscarId = async (id_inmueble)=>{
+    const url = `/api/inmuebles/buscar/${id_inmueble}`;
     return await API.get(url)
     .then((response)=>{
         return response.data;

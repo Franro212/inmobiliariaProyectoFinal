@@ -1,9 +1,11 @@
 .containerEmpresa{
 display: flex;
-margin: 10rem;
+margin-left:  27rem;
+gap: 5rem;
 }
 .imagenEmpresa{
     width: 60rem;
+    border-radius: 3rem;
 }
 .containerImagen{
     width: 40%;
