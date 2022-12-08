@@ -4,11 +4,11 @@ import Select from 'react-select';
 import './buscadorbar.css';
 
 const optionsDepartamentos = [
-    { value:0,label:'Departamento'},
-    { value: 'Montevideo', label: 'Montevideo' },
-    { value: 'Canelones', label: 'Canelones' },
-    { value: 'Maldonado', label: 'Maldonado' }
-  ]
+  { value: 0, label: "Departamento..." },
+  { value: "Montevideo", label: "Montevideo" },
+  { value: "Canelones", label: "Canelones" },
+  { value: "Maldonado", label: "Maldonado" },
+];
 const optionsTipoInmuebles = [
      { value:0,label:'Tipo de Inmuebles'},
 

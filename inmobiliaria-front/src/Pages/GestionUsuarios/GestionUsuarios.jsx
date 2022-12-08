@@ -4,20 +4,7 @@ import ListUsers from "../../Components/ComponentsUser/ListUser";
 import RegisterUser from "../../Components/ComponentsUser/RegisterUser";
 import DeleteUser from "../../Components/ComponentsUser/DeleteUser";
 
-
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Heading,
-  Text,
-  Button,
-  Flex,
-  Box,
-  CardHeader,
-  Image,
-  Divider
-} from "@chakra-ui/react";
+import { Text, Flex, Box } from "@chakra-ui/react";
 
 
 function GestionUsuarios() {
@@ -32,13 +19,12 @@ function GestionUsuarios() {
             Usuarios
           </Text>
         </Box>
-          <RegisterUser />
+        <RegisterUser />
       </Flex>
 
-      <Flex flexDirection='column' mx="27rem" my="20">
-
-        <DeleteUser/>
-        <ListUsers/>
+      <Flex flexDirection="column" mx="27rem" my="20">
+        <DeleteUser />
+        <ListUsers />
       </Flex>
     </>
   );

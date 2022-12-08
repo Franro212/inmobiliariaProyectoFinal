@@ -1,30 +1,31 @@
 import React, { useState } from "react";
-import { eliminarInmueble } from "../../api/Rule_inmueble";
+import { eliminar } from "../../Api/Rule_auth_inmobiliaria";
 
 
 import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
+  FormControl,
+  FormLabel,
+  Button,
+  Input,
+  Flex,
 } from "@chakra-ui/react";
 
-function EliminarInmueble() {
-  const [id, setId] = useState("");
+function EliminarInmueble(props) {
+  const {consultarInmuebles} = props
+  const [idInmueble, setIdInmueble] = useState("");
 
   const handleIdInmueble = (e) => {
-    setId(e.target.value);
+    setIdInmueble(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
  
 
-    await eliminarInmueble(id)
+    await eliminar(idInmueble)
       .then(() => {
         alert("Inmueble eliminado");
+        consultarInmuebles();
       })
       .catch((error) => {
         alert(error);
@@ -33,39 +34,46 @@ function EliminarInmueble() {
 
   return (
     <>
-      <Accordion allowToggle className="acordion" h="5xl">
-        <AccordionItem className="a-item">
-          <h3>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Eliminar inmueble
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h3>
-          <AccordionPanel>
-            <form className="form f-e" onSubmit={handleSubmit}>
-              <label>
-                <input
-                  className="input-form form-eliminar"
-                  placeholder="ID"
-                  required
-                  autoComplete="none"
-                  type="number"
-                  value={id}
-                  onChange={handleIdInmueble}
-                />
-              </label>
+      <form onSubmit={handleSubmit}>
+        <Flex  alignItems='center' my='20'>
 
-              <div className="container-btn">
-                <button className="btn" type="submit">
-                  Eliminar inmueble
-                </button>
-              </div>
-            </form>
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
+        <FormControl w="20%" pr='15'>
+          <FormLabel fontSize="3xl" >Eliminar Inmueble</FormLabel>
+          <Input
+          bg="var(--gray)"
+          border='none'
+            _focus={{
+              border: '1px solid var(--red)',
+            }}
+            p="3"
+            size="2xl"
+            rounded='10'
+            placeholder="ejemplo: 6"
+            autoComplete="none"
+            type="number"
+            value={idInmueble}
+            onChange={handleIdInmueble}
+          />
+        </FormControl>
+
+
+        <Button
+          fontSize="2xl"
+          bg="var(--gray)"
+          color="var(--black)"
+          textAlign='center'
+          p="9"
+          mt='12'
+          rounded="20"
+          type="submit"
+          _hover={{
+            background: 'var(--gray-second)'
+          }}
+        >
+          Eliminar Inmueble
+        </Button>
+        </Flex>
+      </form>
     </>
   );
 }

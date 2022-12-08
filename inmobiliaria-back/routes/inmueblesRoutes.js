@@ -13,8 +13,6 @@ const {
     
   } = require("../controllers/inmuebleController");
 
-  const { verifyToken } = require("../validators/auth");
-  const {verifyPerfil,verifyPerfil2} = require("../validators/perfil");
   
   router.get("/inmuebles/listainmueblebuscar", listaInmuebleBuscar);
 

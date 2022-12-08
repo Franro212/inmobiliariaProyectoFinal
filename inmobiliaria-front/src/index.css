@@ -6,7 +6,7 @@
  --gray: #F5F5F5; 
  --white: #FFFFFF;
  --red-second: #a4010f;
- --gary-second: #dadada;
+ --gray-second: #dadada;
 
 }
 
@@ -71,7 +71,7 @@ body{
 
 
 .btnGray:hover{
-  background-color: var(--gary-second);
+  background-color: var(--gray-second);
 }
 
 .spanRed{

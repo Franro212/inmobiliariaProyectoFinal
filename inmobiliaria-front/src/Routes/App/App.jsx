@@ -33,9 +33,6 @@ function App() {
         </div>
         <div className="containerCard">
           <CardInmuebleHome />
-          {/* <CardInmuebleHome />
-          <CardInmuebleHome />
-          <CardInmuebleHome /> */}
         </div>
         <div className="contBtnApp">
           <button className="btnRed btnVerMas">Ver más inmuebles</button>
@@ -64,7 +61,13 @@ function App() {
             
            </div>
           <div className="containerFormContact">
+            <div className="imgContact">
+              <img src="/assets/mapa.png" alt="" className="imgMap"/>
+            </div>
+            
+
             <FormContact />
+            
           </div>
            </div>
     

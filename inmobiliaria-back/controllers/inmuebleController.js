@@ -276,37 +276,12 @@ exports.filtrarInmueble = (req, res) => {
         }
       });
 
-      // let filteredInmuebleAnd = respuesta.filter((innerArray) => {
-      //   if (
-      //     (innerArray.departamento.includes(departamento.value) &&
-      //     innerArray.tipo_operacion.includes(tipo_operacion.value) &&
-      //       innerArray.tipo_inmueble.includes(tipo_inmueble.value) &&
-      //       parseInt(innerArray.precio) <= parseInt(precio_max) &&
-      //       parseInt(innerArray.precio) > parseInt(precio_min))) {
-      //         return (innerArray.departamento && innerArray.tipo_inmueble && innerArray.precio && innerArray.tipo_operacion);
-
-      //       }
-      //      else if (
-      //         innerArray.tipo_operacion.includes(tipo_operacion.value) &&
-      //           parseInt(innerArray.precio) <= parseInt(precio_max) &&
-      //           parseInt(innerArray.precio) > parseInt(precio_min)) 
-      //           {
-      //             return (innerArray.precio && innerArray.tipo_operacion);
-      //           }    
-         
-      //   else {
-      //     return false;
-      //   }
-      // });
-
       if (filteredInmueble.length != 0) {
         res.send(filteredInmueble);
       }else {
         res.json(respuesta);
       }
-      // console.log('FilteredInmuebleAnd:', filteredInmuebleAnd)
-      // console.log('FilteredInmuebleOr:', filteredInmuebleOr)
-      //
+ 
     })
     .catch((error) => {
       res.status(400).json({ error: error.message });
