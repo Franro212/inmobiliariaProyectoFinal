@@ -19,9 +19,14 @@ import App from './Routes/App/App';
 
 
 
+
 // ============ STYLE ===============
+
 import { ChakraProvider } from '@chakra-ui/react';
 import './index.css';
+
+
+
 
 
 const router = createBrowserRouter([
