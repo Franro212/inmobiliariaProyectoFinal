@@ -37,38 +37,38 @@ exports.listaInmueble = (req, res) => {
         barrio,
         direccion,
        } = fields;
-      //  if(!tipo_operacion || !tipo_operacion.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, tipo_operacion"})
-      // }
-      // if(!tipo_inmueble || !tipo_inmueble.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, tipo_inmueble"})
-      // }
-      // if(!m2_terreno || !m2_terreno.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, metros_cuadrados"})
-      // }
-      // if(!precio || !precio.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, precio"})
-      // }
-      // if(!direccion || !direccion.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, direccion"})
-      // }
-      // if(!ciudad || !ciudad.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, ciudad"})
-      // }
-      // if(!departamento || !departamento.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, departamento"})
-      // }
-      // if(!barrio || !barrio.length){
-      //   return res.status(400)
-      //   .json({error:"Este campo es obligatorio, barrio"})
-      // }
+       if(!tipo_operacion || !tipo_operacion.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, tipo_operacion"})
+      }
+      if(!tipo_inmueble || !tipo_inmueble.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, tipo_inmueble"})
+      }
+      if(!m2_terreno || !m2_terreno.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, metros_cuadrados"})
+      }
+      if(!precio || !precio.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, precio"})
+      }
+      if(!direccion || !direccion.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, direccion"})
+      }
+      if(!ciudad || !ciudad.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, ciudad"})
+      }
+      if(!departamento || !departamento.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, departamento"})
+      }
+      if(!barrio || !barrio.length){
+        return res.status(400)
+        .json({error:"Este campo es obligatorio, barrio"})
+      }
   
       
       

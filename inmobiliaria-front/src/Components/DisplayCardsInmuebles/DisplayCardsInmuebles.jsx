@@ -49,15 +49,15 @@ function DisplayCardsInmuebles({ Inmuebles }) {
                   <div>
                   
                   {
-                  inmueble.tipo_inmueble=='Casa' &&  
+                  inmueble.tipo_inmueble=='casa' &&  
                   (<p className="iconosP"><BsHouse className="icono"/>Casa</p>)
                   }
                   {
-                  inmueble.tipo_inmueble=='Apartamento' &&  
+                  inmueble.tipo_inmueble=='apartamento' &&  
                   (<p className="iconosP"><BsBuilding className="icono"/>Apartamento</p>)
                   }
                   {
-                   inmueble.tipo_inmueble=='Terreno' &&  
+                   inmueble.tipo_inmueble=='terreno' &&  
                   (<p className="iconosP"><MdLandscape className="icono"/>Terreno</p>)
                   }
                   

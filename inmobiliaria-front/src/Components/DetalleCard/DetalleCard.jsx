@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';import './detalleCard';
 import {buscarById} from '../../Api/Rule_auth_inmobiliaria';
 import Header from '../Header/Header';
-import './DetalleCard';
+import './detallecard.css'
 import Footer from '../footer/Footer';
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import {MdScreenSearchDesktop} from "react-icons/md";
+
 
 
 
@@ -43,27 +43,32 @@ function DetalleCard() {
 
     <div>
          <div><Header/></div>
-        <div className="inmuebleCardmain"> 
+        
         <div className="inmuebleCardContainer">
-        Descripcion del Card 
-        { datosIniciales.length!=0 && 
-        <p>Precio: {datosIniciales[0].precio} </p>
-         }
+       <div className='contImagenDetalle'>
+
         {datosIniciales.length!=0 && <img src={`http://localhost:8000/api/inmuebles/photo/${datosIniciales[0].id_inmueble}`}></img>}
+        </div>
+        <div className='contDetalle'>
+
+          {datosIniciales.length!=0 && <p className='tipoOperacionDetalle'> {datosIniciales[0].tipo_operacion} </p>}
+        { datosIniciales.length!=0 && 
+        <p className='detalle'>Precio: ${datosIniciales[0].precio} </p>
+         }
  
-        {datosIniciales.length!=0 && <p>Tipo de Operación: {datosIniciales[0].tipo_operacion} </p>}
-        {datosIniciales.length!=0 && <p>id_inmueble: {datosIniciales[0].id_inmueble} </p>}
-        {datosIniciales.length!=0 && <p className="ubicacionElement">Dirección: {datosIniciales[0].direccion} </p>}
-        {datosIniciales.length!=0 && <p className="ubicacionElement">Ciudad: {datosIniciales[0].ciudad} </p>}
-        {datosIniciales.length!=0 && <p className="ubicacionElement">Departamento: {datosIniciales[0].departamento} </p>}
+        {datosIniciales.length!=0 && <p className='detalle'>Tipo de inmueble: {datosIniciales[0].tipo_inmueble} </p>}
+        {datosIniciales.length!=0 && <p className='detalle'>Dirección: {datosIniciales[0].direccion} </p>}
+        {datosIniciales.length!=0 && <p className='detalle'>Ciudad: {datosIniciales[0].ciudad} </p>}
+        {datosIniciales.length!=0 && <p className='detalle'>Departamento: {datosIniciales[0].departamento} </p>}
+        {datosIniciales.length!=0 && <p className='detalle'>Descripcion: {datosIniciales[0].descripcion} </p>}
+        </div>
+        </div>
 
         <div className="bloqueDeCambioDePaginas">
-        <Link to={`/BuscadorPage`}><MdScreenSearchDesktop className="icono"/><p>Regresar al Buscador</p></Link>
-        { datosIniciales.length!=0  && (
-        <Link to={`/BuscadorPage/detalleInmueble/${datosIniciales[0].id_inmueble+1}`}><p>Siguiente</p> </Link> )} 
+        <Link className='btnDetalle'to={`/BuscadorPage`}>Regresar al Buscador</Link>
+     
         </div>
-        </div>
-        </div>
+        
 
         <div><Footer/></div>
     </div>
