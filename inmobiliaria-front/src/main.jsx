@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // ============ IMPORT COMPONENTS ===============
 import BuscadorPage from './Components/BuscadorPage/BuscadorPage';
-import ModificarInmueble from "./Components/ComponentsInmu/ModificarInmueble";
 import RegistrarInmueble from "./Components/ComponentsInmu/RegistrarInmueble";
 import GestionPublicaciones from './Pages/GestionPublicaciones/GestionPublicaciones';
 import GestionUsuarios from './Pages/GestionUsuarios/GestionUsuarios';
@@ -81,10 +80,7 @@ const router = createBrowserRouter([
   element: <RegistrarInmueble />,
 },
 
-{
-  path: "modificarInmueble",
-  element: <ModificarInmueble />,
-},
+
 
 ]);
 
