@@ -12,7 +12,6 @@ import GestionPublicaciones from './Pages/GestionPublicaciones/GestionPublicacio
 import GestionUsuarios from './Pages/GestionUsuarios/GestionUsuarios';
 import HomeAdmin from './Pages/HomeAdmin/HomeAdmin.jsx';
 import PageLogin from './Pages/PageLogin/PageLogin';
-import BuscadorPage from  './Components/BuscadorPage/BuscadorPage';
 import DetalleCard from './Components/DetalleCard/DetalleCard';
 import Empresa from './Components/Empresa/Empresa';
 import Estudio from './Components/Estudio/Estudio';
