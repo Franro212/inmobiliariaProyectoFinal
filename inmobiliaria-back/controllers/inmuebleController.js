@@ -248,6 +248,7 @@ exports.filtrarInmueble = (req, res) => {
   knex.select('*')
   .from('inmuebles')
     .then((respuesta) => {
+      
       let filteredInmueble = respuesta.filter((innerArray) => {
         if (
           innerArray.departamento.includes(departamento.value) )
@@ -266,8 +267,9 @@ exports.filtrarInmueble = (req, res) => {
           return innerArray.precio;
 
         }
-        else if (parseInt(innerArray.precio)>parseInt(precio_min) && parseInt(innerArray.precio)<=parseInt(precio_max) && (innerArray.tipo_operacion.includes(tipo_operacion.value))&& (innerArray.tipo_inmueble.includes('')&& innerArray.departamento.includes(''))) {
-          return (innerArray.precio && innerArray.tipo_operacion);
+        else if (parseInt(innerArray.precio)>parseInt(precio_min) && parseInt(innerArray.precio)<=parseInt(precio_max) && (innerArray.tipo_operacion.includes(tipo_operacion.value))&& (innerArray.tipo_inmueble.includes(tipo_operacion.value) && innerArray.includes(tipo_operacion.value))) {
+          return (innerArray.precio && innerArray.tipo_operacion && innerArray.departamento
+            && innerArray.tipo_inmueble);
 
         }
 
