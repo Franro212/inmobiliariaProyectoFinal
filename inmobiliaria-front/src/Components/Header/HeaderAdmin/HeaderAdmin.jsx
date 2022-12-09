@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NameUser from "../../ComponentsUser/NameUser";
 
 import "./headerAdmin.css";
@@ -17,7 +17,8 @@ import {
 } from "@chakra-ui/react";
 
 function HeaderAdmin() {
-
+  const navigate = useNavigate();
+  const closeSesion = () => { localStorage.removeItem("token"); navigate("/pageLogin") };
 
   return (
     <Flex
@@ -60,7 +61,7 @@ function HeaderAdmin() {
           <Avatar src="https://bit.ly/broken-link" mx="5" />
         </MenuButton>
         <MenuList p={4} borderRadius="3rem" _hover={{ bg: "var(--white)" }}>
-          <MenuItem>
+          <MenuItem onClick={closeSesion}>
             <HiOutlineArrowRightOnRectangle />
             Cerrar Sesión
           </MenuItem>
