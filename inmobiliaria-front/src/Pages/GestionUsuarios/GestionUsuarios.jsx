@@ -6,6 +6,7 @@ import DeleteUser from "../../Components/ComponentsUser/DeleteUser";
 
 import { Text, Flex, Box } from "@chakra-ui/react";
 
+
 function GestionUsuarios() {
   return (
     <>

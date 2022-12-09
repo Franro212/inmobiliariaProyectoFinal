@@ -2,7 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { registrarUsuario } from "../../Api/Rule_user";
 
-
 import { AddIcon } from "@chakra-ui/icons";
 
 import {
@@ -87,7 +86,6 @@ function RegisterUser() {
                 size="lg"
                 rounded="20"
                 my="5"
-
                 placeholder="Nombre"
                 type="text"
                 {...register("nombre", {

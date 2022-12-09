@@ -16,7 +16,7 @@
     "@formspree/react": "^2.4.1",
     "axios": "^1.2.0",
     "formidable": "^2.1.1",
-    "framer-motion": "^7.6.18",
+    "framer-motion": "^7.6.19",
     "fs": "^0.0.1-security",
     "react": "^18.2.0",
     "react-bootstrap-range-slider": "^3.0.8",

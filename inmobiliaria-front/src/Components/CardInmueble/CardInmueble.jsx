@@ -44,7 +44,7 @@ function CardInmuebleHome() {
             <p className="precio">U$S{inmueble.precio}</p>
             <hr />
             <div className="especificaciones">
-              <p>
+              <p >
                 <FaBed className="icono" />
                 {inmueble.dormitorio}
               </p>
