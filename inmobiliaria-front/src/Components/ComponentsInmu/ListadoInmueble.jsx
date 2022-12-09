@@ -17,6 +17,8 @@ function ListadoInmuebles(props) {
   return (
     <>
 
+    
+
       <TableContainer mt='10'>
         <Table variant="simple" size="lg">
           <Thead>

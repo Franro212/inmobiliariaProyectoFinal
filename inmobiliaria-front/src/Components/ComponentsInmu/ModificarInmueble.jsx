@@ -33,6 +33,9 @@ function ModificarInmueble() {
         alert(error);
       });
   };
+  
+ 
+
 
   return (
     <>
@@ -54,10 +57,10 @@ function ModificarInmueble() {
       </Flex>
 
       <Flex mx="27rem" mt="20" justifyContent="space-between">
-        <form onSubmit={handleSubmit(onSubmit)} className="formRegistrarInmu">
+        <form  onSubmit={handleSubmit(onSubmit)} className="formRegistrarInmu">
           <Heading mb="32">Modificar publicación</Heading>
-
           <Input
+
         className="input"
         type="number"
         {...register("id", {
@@ -69,7 +72,6 @@ function ModificarInmueble() {
 
           <Select
             name="Tipo de operacion"
-           
             placeholder="Tipo de operación"
             fontSize="2xl"
             bg="var(--gray)"
@@ -95,7 +97,6 @@ function ModificarInmueble() {
 
           <Select
             name="Tipo de inmueble"
-           
             placeholder="Tipo de inmueble"
             fontSize="2xl"
             bg="var(--gray)"
@@ -186,6 +187,7 @@ function ModificarInmueble() {
               my="10"
               _placeholder={{ opacity: 8, color: "var(--black)" }}
               type="number"
+              
               {...register("m2_terreno")}
             />
           
@@ -355,6 +357,7 @@ function ModificarInmueble() {
               my="10"
               py="10"
               _placeholder={{ opacity: 8, color: "var(--black)" }}
+    
               {...register("descripcion")}
             />
           </Flex>

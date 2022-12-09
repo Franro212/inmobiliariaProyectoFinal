@@ -14,18 +14,15 @@ import GestionUsuarios from './Pages/GestionUsuarios/GestionUsuarios';
 import HomeAdmin from './Pages/HomeAdmin/HomeAdmin.jsx';
 import PageLogin from './Pages/PageLogin/PageLogin';
 import App from './Routes/App/App';
+import Estudio from './Components/Estudio/Estudio';
 
 
 
 // ============ STYLE ===============
-import { ChakraProvider } from '@chakra-ui/react';
-import './index.css';
+
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import Empresa from './Components/Empresa/Empresa';
-import Servicios from './Components/servicios/Servicios';
-import FormContact from './Components/FormContact/FormContact';
-import Estudio from './Components/Estudio/Estudio';
+
 
 const router = createBrowserRouter([
 
