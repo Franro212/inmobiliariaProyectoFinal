@@ -76,6 +76,10 @@ function DetalleCard() {
         { datosIniciales.length!=0 && 
         <p className='detallePrecio'>U$S {datosIniciales[0].precio.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")} </p>
          }
+           {datosIniciales.length!=0 && <div>
+          {datosIniciales[0].tipo_inmueble=="Casa" && <p className="iconosP"><BsHouse className="icono"/>Casa</p>}
+        {datosIniciales[0].tipo_inmueble=="Apartamento" && <p className="iconosP"><BsBuilding className="icono"/>Apartamento</p>}
+        {datosIniciales[0].tipo_inmueble=="Terreno" && <p className="iconosP"><MdLandscape className="icono"/>Terreno</p>} </div> } 
         { datosIniciales.length!=0 && <div className="contIconosFa">
                     <p className="iconosP">
                       <FaBed className="icono"/>
@@ -90,12 +94,11 @@ function DetalleCard() {
                       {datosIniciales[0].m2_terreno}m2 de Terreno
                     </p>
                   </div>}
-        
-        {
+     
+
+        {  
         datosIniciales.length!=0 && <div >
-        {datosIniciales[0].tipo_inmueble=="Casa" && <p className="iconosP"><BsHouse className="icono"/>Casa</p>}
-        {datosIniciales[0].tipo_inmueble=="Apartamento" && <p className="iconosP"><BsBuilding className="icono"/>Apartamento</p>}
-        {datosIniciales[0].tipo_inmueble=="Terreno" && <p className="iconosP"><MdLandscape className="icono"/>Terreno</p>}
+      
         <div className="contBarrioCiudad">
         <h3>Ubicación</h3>
         {<p className='detalleBarrioCiudad'>{datosIniciales[0].barrio},  {datosIniciales[0].ciudad } </p>}

@@ -45,18 +45,19 @@ function DisplayCardsInmuebles({ Inmuebles }) {
                       {inmueble.m2_terreno}m2
                     </p>
                   </div>
+                  {/* <p ><span className="tipoInmuebleClass">Tipo: </span> */}
                   <div>
                   
                   {
-                  inmueble.tipo_inmueble=='casa' &&  
+                  inmueble.tipo_inmueble=='Casa' &&  
                   (<p className="iconosP"><BsHouse className="icono"/>Casa</p>)
                   }
                   {
-                  inmueble.tipo_inmueble=='apartamento' &&  
+                  inmueble.tipo_inmueble=='Apartamento' &&  
                   (<p className="iconosP"><BsBuilding className="icono"/>Apartamento</p>)
                   }
                   {
-                   inmueble.tipo_inmueble=='terreno' &&  
+                   inmueble.tipo_inmueble=='Terreno' &&  
                   (<p className="iconosP"><MdLandscape className="icono"/>Terreno</p>)
                   }
                   

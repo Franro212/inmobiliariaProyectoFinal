@@ -250,7 +250,7 @@ exports.filtrarInmueble = (req, res) => {
     .then((respuesta) => {
       
       let filteredInmueble = respuesta.filter((innerArray) => {
-        if (
+       if (
           innerArray.departamento.includes(departamento.value) )
          {
           return innerArray.departamento;
@@ -263,24 +263,53 @@ exports.filtrarInmueble = (req, res) => {
           return innerArray.tipo_operacion;
         
         } 
-        else if (innerArray.precio>=parseInt(precio_min) && innerArray.precio<parseInt(precio_max)) {
-          return innerArray.precio;
+        
+     
+      //   else if ((innerArray.tipo_operacion.includes(tipo_operacion.value)) && innerArray.departamento.includes(departamento.value)&& (tipo_inmueble.value).length==0 &&precio_min.length==0 && precio_max.length==0) {
+      //     return ( innerArray.departamento  && innerArray.tipo_inmueble);
 
-        }
-        else if (parseInt(innerArray.precio)>parseInt(precio_min) && parseInt(innerArray.precio)<=parseInt(precio_max) && (innerArray.tipo_operacion.includes(tipo_operacion.value))&& (innerArray.tipo_inmueble.includes(tipo_operacion.value) && innerArray.includes(tipo_operacion.value))) {
-          return (innerArray.precio && innerArray.tipo_operacion && innerArray.departamento
-            && innerArray.tipo_inmueble);
+      //   }
 
-        }
-
-         else {
-          return false;
+        else {
+         return false;
         }
       });
 
-      if (filteredInmueble.length != 0) {
-        res.send(filteredInmueble);
-      }else {
+      let filteredbyPrices = respuesta.filter((innerArray) => {
+          if (parseInt(innerArray.precio)<parseInt(precio_max)&&
+              parseInt(innerArray.precio)>=parseInt(precio_min)) {
+          return innerArray.precio; 
+      
+        } 
+      })
+      .filter((tipo) => {
+        if(tipo.tipo_inmueble.includes(tipo_inmueble.value))
+        {return tipo.tipo_inmueble;
+        }
+        else
+        {return false;
+        }})
+        .filter((department) =>{if(department.departamento.includes(departamento.value)){
+          return department.departamento;
+        }else {
+          return false;
+        }})
+        .filter((operacion) =>{if(operacion.tipo_operacion.includes(tipo_operacion.value)){
+          return operacion.tipo_operacion;
+        } 
+      })
+      // console.log("filteredInmueble: ",filteredInmueble)
+      console.log("filteredbyPrices:",filteredbyPrices)
+
+      // if (filteredInmueble.length != 0 && filteredbyPrices.length==0 ) {
+      //   // 
+      //   res.send(filteredInmueble);
+      // }
+      if ( filteredbyPrices.length!=0 ) {
+        res.send(filteredbyPrices);
+
+      }
+      else {
         res.json(respuesta);
       }
  
