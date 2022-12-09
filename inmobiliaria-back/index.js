@@ -21,7 +21,7 @@ app.use(cors());
 
 
 app.use("/api", userRoutes);
- app.use("/api", inmuebleRoutes)
+app.use("/api", inmuebleRoutes);
 
 
 const port = process.env.PORT || 8000;
