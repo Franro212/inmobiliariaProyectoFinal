@@ -2,18 +2,23 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';import './detalleCard';
 import {buscarById} from '../../Api/Rule_auth_inmobiliaria';
 import Header from '../Header/Header';
-import './DetalleCard';
+import './detallecard.css'
 import Footer from '../footer/Footer';
 import { Link  } from "react-router-dom";
-import { useParams, useNavigate} from "react-router-dom";
-import {MdScreenSearchDesktop} from "react-icons/md";
+import { useParams} from "react-router-dom";
+import { FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
+import {BsHouse, BsBuilding} from "react-icons/bs";
+import { MdLandscape } from "react-icons/md";
+
+// import {MdScreenSearchDesktop} from "react-icons/md";
+
 
 
 
 function DetalleCard() {
     const[datosIniciales,setDatosIniciales] = useState([]);
     const { id_inmueble } = useParams();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
    
 
@@ -56,35 +61,81 @@ function DetalleCard() {
 
   return (
 
-    <div>
+    <>
          <div><Header/></div>
-        <div className="inmuebleCardmain"> 
+     
         <div className="inmuebleCardContainer">
-        Descripcion del Card 
-        { datosIniciales.length!=0 && 
-        <p>Precio: {datosIniciales[0].precio} </p>
-         }
-        {datosIniciales.length!=0 && <img src={`http://localhost:8000/api/inmuebles/photo/${datosIniciales[0].id_inmueble}`}></img>}
- 
-        {datosIniciales.length!=0 && <p>Tipo de Operación: {datosIniciales[0].tipo_operacion} </p>}
-        {datosIniciales.length!=0 && <p>id_inmueble: {datosIniciales[0].id_inmueble} </p>}
-        {datosIniciales.length!=0 && <p className="ubicacionElement">Dirección: {datosIniciales[0].direccion} </p>}
-        {datosIniciales.length!=0 && <p className="ubicacionElement">Ciudad: {datosIniciales[0].ciudad} </p>}
-        {datosIniciales.length!=0 && <p className="ubicacionElement">Departamento: {datosIniciales[0].departamento} </p>}
+        <div className="contRowOne">
+       <div className='contImagenDetalle'>
 
+        {datosIniciales.length!=0 && <img src={`http://localhost:8000/api/inmuebles/photo/${datosIniciales[0].id_inmueble}`}></img>}
+        </div>
+        <div className='contDetalle'>
+
+          {datosIniciales.length!=0 && <p className='tipoOperacionDetalle'> {datosIniciales[0].tipo_operacion} </p>}
+        { datosIniciales.length!=0 && 
+        <p className='detallePrecio'>U$S {datosIniciales[0].precio.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")} </p>
+         }
+        { datosIniciales.length!=0 && <div className="contIconosFa">
+                    <p className="iconosP">
+                      <FaBed className="icono"/>
+                      {datosIniciales[0].dormitorio} Dorm.
+                    </p>
+                    <p className="iconosP">
+                      <FaBath className="icono" />
+                      {datosIniciales[0].banio} Baños
+                    </p>
+                    <p className="iconosP">
+                      <FaRulerCombined className="icono" />
+                      {datosIniciales[0].m2_terreno}m2 de Terreno
+                    </p>
+                  </div>}
+        
+        {
+        datosIniciales.length!=0 && <div >
+        {datosIniciales[0].tipo_inmueble=="Casa" && <p className="iconosP"><BsHouse className="icono"/>Casa</p>}
+        {datosIniciales[0].tipo_inmueble=="Apartamento" && <p className="iconosP"><BsBuilding className="icono"/>Apartamento</p>}
+        {datosIniciales[0].tipo_inmueble=="Terreno" && <p className="iconosP"><MdLandscape className="icono"/>Terreno</p>}
+        <div className="contBarrioCiudad">
+        <h3>Ubicación</h3>
+        {<p className='detalleBarrioCiudad'>{datosIniciales[0].barrio},  {datosIniciales[0].ciudad } </p>}
+       
+        <h3>Dirección</h3>
+        {<p className='detalleBarrioCiudad'>  {datosIniciales[0].direccion } </p>}
+        <h3>Descripcion</h3>
+        {<p className='detalle'>{datosIniciales[0].descripcion} </p>}
+        </div>
+          
+        </div>
+        }
+
+          
+        
+        
+        </div>
+        </div>
+        <div className="contRowTwo">
+        <Link className='btnDetalle'to={`/BuscadorPage`}> 
+        <div className="buscadorReturn"><p>Volver al Buscador</p> </div>
+        </Link>
+        </div>
+        </div>
+       
+       
+       
         <div className="bloqueDeCambioDePaginas">
-        <Link to={`/BuscadorPage`}><MdScreenSearchDesktop className="icono"/><p>Regresar al Buscador</p></Link>
+        {/* <Link to={`/BuscadorPage`}><MdScreenSearchDesktop className="icono"/><p>Regresar al Buscador</p></Link> */}
         
         {/* // <Link to={`/BuscadorPage/detalleInmueble/${datosIniciales[0].id_inmueble+1}`}><p>Siguiente</p> </Link>  */}
         {/* { datosIniciales.length!=0  && 
         <button onClick={handleNavigation}>Siguiente</button> } */}
        
         </div>
-        </div>
-        </div>
+       
+        
 
         <div><Footer/></div>
-    </div>
+    </>
   )
 }
 

@@ -54,41 +54,35 @@
 }
 
 .containerSectContact{
-  /* background-color: var(--gray);
-  padding: 2rem; */
-  margin: 20rem 0rem;
+  margin: 0 27rem;
 }
 
 .contFormMap{
 display: flex;
-margin: 0 27rem;
+
 align-items: center;
+width: 100%;
+
 
 
 }
+
 .containerFormContact{
 
-  margin: 0 27rem;
-  /* display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem; */
-
+  gap: 3rem;
 }
 
+
 .imgContact{
-  /* width: 50%; */
-  margin-left: 27rem;
-  margin: 0 auto;
+  width: 30%;
+  
   
 }
 .contMap{
-  width:50%;
-  
-  
-  
-  
-  
+  width:35%;
 
 }
 

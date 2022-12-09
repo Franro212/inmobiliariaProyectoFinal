@@ -69,29 +69,7 @@ function GestionPublicaciones() {
       <Flex flexDirection="column" mx="27rem" my="20">
 
         <EliminarInmueble consultarInmuebles={consultarInmuebles}/>
-        <Link to={"/modificarInmueble"}
-          
-          >
-            <Button
-              fontSize="2xl"
-              textAlign="center"
-              p='10'
-              h="20"
-              rounded="full"
-              bg="var(--red)"
-              color="var(--white)"
-              gap={2}
-              _hover={{
-                background: "var(--red-second)",
-              }}
-            
-            >
-              <AddIcon boxSize={5} />
-              Modificar Publicación
-  
-            </Button>
-           
-          </Link>
+       
         <ListadoInmuebles inmuebles={inmuebles}/>
       </Flex>
     </>
