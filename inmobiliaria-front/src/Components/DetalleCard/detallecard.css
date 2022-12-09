@@ -1,0 +1,17 @@
+.inmuebleCardContainer {
+    width: 35rem;
+    background-color: var(--white);
+    border-radius: 2rem;
+    margin-bottom: 10rem;
+    margin-left:1rem;
+    margin-right:1rem;
+    box-shadow: 0 1px 1px 0 rgba(53, 53, 53, 0.2), 0 6px 20px 0 rgba(53, 53, 53, 0.2);
+}
+
+.icono{
+    color: var(--red);
+    margin-right: 1rem;
+    text-align: center;
+ }
+ 
+

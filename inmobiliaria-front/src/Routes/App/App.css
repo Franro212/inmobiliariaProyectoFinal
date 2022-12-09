@@ -67,13 +67,23 @@ gap: 5rem;
 
 }
 
+.containerFormContact{
+
+  margin: 0 27rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+
 .imgContact{
   width: 50%;
-  margin-left: 27rem;
   margin: 0 auto;
   
 }
 .contMap{
   width:35%;
+
 }
 
