@@ -7,7 +7,9 @@ import Servicios from "../../Components/servicios/Servicios";
 import Footer from "../../Components/Footer/Footer";
 import FormContact from "../../Components/FormContact/FormContact";
 import CardInmuebleHome from "../../Components/CardInmueble/CardInmueble";
-import { AspectRatio } from '@chakra-ui/react'
+import { AspectRatio } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
+
 
 import "./App.css";
 
@@ -35,7 +37,11 @@ function App() {
           <CardInmuebleHome />
         </div>
         <div className="contBtnApp">
-          <button className="btnRed btnVerMas">Ver más inmuebles</button>
+          {/* <button className="btnRed btnVerMas">Ver más inmuebles</button> */}
+          <Link to={"/buscadorPage"}>
+
+              <button className="btnRed btnVerMas">Ver más inmuebles</button>
+          </Link>
         </div>
       </div>
 

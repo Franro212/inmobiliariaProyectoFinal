@@ -301,14 +301,14 @@ exports.filtrarInmueble = (req, res) => {
       // console.log("filteredInmueble: ",filteredInmueble)
       console.log("filteredbyPrices:",filteredbyPrices)
 
-      // if (filteredInmueble.length != 0 && filteredbyPrices.length==0 ) {
-      //   // 
-      //   res.send(filteredInmueble);
-      // }
-      if ( filteredbyPrices.length!=0 ) {
-        res.send(filteredbyPrices);
-
+      if (filteredInmueble.length != 0 && filteredbyPrices.length==0 ) {
+         
+        res.json(filteredInmueble);
       }
+      // if (filteredbyPrices.length!=0 ) {
+      //   res.json(filteredbyPrices);
+
+      // }
       else {
         res.json(respuesta);
       }
